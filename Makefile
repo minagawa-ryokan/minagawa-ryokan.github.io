@@ -15,6 +15,7 @@ ALL := \
   music/minagawa-teiri-ch \
   memorial \
   memorial/2024-11-10 \
+  memorial/2024-08-16 \
   skeb \
   skeb/2024-11-09 \
   skeb/2024-10-16 \
