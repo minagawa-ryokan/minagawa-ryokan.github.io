@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="同人ゲームサークル『水無川旅館』公式サイト">
+  <meta name="keyword" content="ゲーム,インディー,同人,インディーゲーム,同人,同人ゲーム,アクション,アクションゲーム,3D,2D,横スクロール,横スク,3Dアクション,2Dアクション,横スクロールアクション,横スクアクション,アドベンチャー,アクションアドベンチャー,3Dアクションアドベンチャー,アドベンチャーゲーム,3Dアクションアドベンチャーゲーム,3Dアクションゲーム,3Dアドベンチャーゲーム,2Dアクションゲーム,東京ゲームダンジョン,デジゲー博,夏コミ,冬コミ,コミケ,コミケット,C101,C103,C104,C105,コミティア,COMITIA,水無川旅館,水無川,旅館,テーリ,ミナガワ・テーリ,ミナガワテーリ,ヴェリティ,ヴェリティ・バレー,ヴェリティ・A・バレー,ヴェリティバレー,ヴェリティAバレー,ディーサ,ディーサ・ヨーヌドフテル,ディーサヨーヌドフテル,VSinger,Vsinger,VTuber,Vtuber,オリジナル曲,歌ってみた,Hijack,ヒトノムクロ,人の骸,人の躯,ヒンジヤノホコリ,ヒンジャノホコリ,貧者の誇り,テンシノコクハク,天使の告白,ふりむいてなんていられない,川向薫,飯田はと,羽澄愛,狐ノ里たけのこ,ナユキユズ,菜月なこ,エヴァリー,エヴァリー・リバーズ,エヴァリーリバーズ,近衛逢">
+  <link rel="stylesheet" href="/index.css">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://minagawa-ryokan.github.io">
+  <meta name="twitter:title" content="水無川旅館">
+  <meta name="twitter:description" content="同人アクションゲームサークル・水無川旅館の公式サイトです。">
+  <meta name="twitter:image" content="https://minagawa-ryokan.github.io/images/meta/twitter-card.png">
+  <meta name="twitter:site" content="@bydriv">
+
+  <title>水無川旅館</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0MM6YRTGP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y0MM6YRTGP');
+  </script>
+
+  <script>
+    var jump = (function () {
+        var beforeState = null;
+
+        function get(id) {
+            return id === "" ? null : document.getElementById(id);
+        }
+
+        function jump(path) {
+            history.pushState({path: path}, "", "/" + path);
+
+            if (beforeState != null && beforeState.path != null) {
+                var dom = get(beforeState.path);
+
+                if (dom != null) {
+                    dom.dataset.target = "false";
+                }
+            }
+
+            if (path != null) {
+                var dom = get(path);
+
+                if (dom != null) {
+                    dom.dataset.target = "true";
+                }
+            }
+
+            beforeState = {path: path};
+        }
+
+        window.addEventListener("popstate", function (e) {
+            if (beforeState != null && beforeState.path != null) {
+                var dom = get(beforeState.path);
+
+                if (dom != null) {
+                    dom.dataset.target = "false";
+                }
+            }
+
+            if (e.state != null && e.state.path != null) {
+                var dom = get(e.state.path);
+
+                if (dom != null) {
+                    dom.dataset.target = "true";
+                }
+            }
+
+            beforeState = e.state;
+        });
+
+        (function () {
+            var path = window.location.pathname;
+
+            if (path.startsWith("/")) {
+                path = path.slice(1);
+            }
+
+            if (path.endsWith("/")) {
+                path = path.slice(0, path.length - 1);
+            }
+
+            if (path !== "") {
+                history.replaceState({path: path}, "", "/" + path);
+                beforeState = {path: path};
+            }
+        })();
+
+        return function (link) {
+            var href = link.getAttribute("href");
+
+            if (!href.startsWith("#")) {
+                return;
+            }
+
+            jump(href.slice(1));
+
+            return false;
+        };
+    })();
+  </script>
+</head>
+
+<div class="background"></div>
+
+<div class="world">
+  <article class="container">
+    <article class="top">
+      <div class="root">
+        <h1 class="header"><a href="#" onclick="return jump(this);"><img src="/images/minagawa-ryokan-logo.png" alt="水無川旅館"></a></h1>
+
+        <div class="entrance">
+          <nav>
+            <p class="navigation">
+              <a href="#top" onclick="return jump(this);">CLICK HERE TO ENTER</a>
+            </p>
+          </nav>
+        </div>
+
+        <div class="summary">
+          <nav>
+            <p class="navigation">
+              <a href="#top" onclick="return jump(this);">√</a>・<a href="#about" onclick="return jump(this);">About</a>・<a href="#lineup" onclick="return jump(this);">Lineup</a>
+            </p>
+          </nav>
+
+          <nav>
+            <h2>News</h2>
+
+            <ol class="news">
+              <li><time datetime="2024-11-10T20:00+09:00">2024/11/10</time> …… <a href="#news/official-site" onclick="return jump(this);">水無川旅館公式サイト公開！</a></li>
+              <li><time datetime="2024-11-08T17:00+09:00">2024/11/8</time> …… <a href="#news/c105" onclick="return jump(this);">C105当選！</a></li>
+            </ol>
+
+            <div class="more">
+              <a href="#news" onclick="return jump(this);">もっと見る</a>
+            </div>
+          </nav>
+
+          <nav>
+            <h2>Schedule</h2>
+
+            <ol class="schedule">
+              <li><time datetime="2024-12-30T10:30+09:00">2024/12/30</time> …… C105【き-15a】</li>
+            </ol>
+
+            <div class="more">
+              <a href="#schedule" onclick="return jump(this);">もっと見る</a>
+            </div>
+          </nav>
+
+          <nav>
+            <h2>Games</h2>
+
+            <ol class="games">
+              <li><a href="#games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク</a></li>
+              <li><a href="#games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a></li>
+              <li><a href="#games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a></li>
+            </ol>
+
+            <div class="more">
+              <a href="#games" onclick="return jump(this);">もっと見る</a>
+            </div>
+          </nav>
+
+          <nav>
+            <h2>Music</h2>
+
+            <ol class="music">
+              <li><a href="#music/dont-let-me-remember" onclick="return jump(this);">ふりむいてなんていられない</a></li>
+              <li><a href="#music/minagawa-teiri-ch" onclick="return jump(this);">ミナガワ・テーリ Ch.</a></li>
+            </ol>
+
+            <div class="more">
+              <a href="#music" onclick="return jump(this);">もっと見る</a>
+            </div>
+          </nav>
+
+          <nav>
+            <h2>Skeb</h2>
+
+            <ul class="gallery">
+              <li><a href="#skeb/2024-11-09" onclick="return jump(this);"><img src="/images/skeb/2024-11-09.png" alt="ポッキーテーリ（飯田はと様）"></a></li>
+              <li><a href="#skeb/2024-10-16" onclick="return jump(this);"><img src="/images/skeb/2024-10-16.png" alt="ヴァンパイアテーリ（飯田はと様）"></a></li>
+              <li><a href="#skeb/2024-10-12" onclick="return jump(this);"><img src="/images/skeb/2024-10-12.png" alt="テーリ（あじこま様）"></a></li>
+              <li><a href="#skeb/2024-09-06" onclick="return jump(this);"><img src="/images/skeb/2024-09-06.png" alt="お月見テーリ（飯田はと様）"></a></li>
+              <li><a href="#skeb/2024-08-18" onclick="return jump(this);"><img src="/images/skeb/2024-08-18.png" alt="テーリ×たけのこVRライブ！（飯田はと様）"></a></li>
+              <li><a href="#skeb/2024-08-06" onclick="return jump(this);"><img src="/images/skeb/2024-08-06.png" alt="水着テーリ（飯田はと様）"></a></li>
+              <li><a href="#skeb/2024-07-13" onclick="return jump(this);"><img src="/images/skeb/2024-07-13.png" alt="テーリ×たけのこ晴れ姿！（飯田はと様）"></a></li>
+              <li><a href="#skeb/2024-02-16" onclick="return jump(this);"><img src="/images/skeb/2024-02-16.png" alt="アイドルテーリ（あじこま様）"></a></li>
+              <!--<li><a href="#skeb/2023-08-24" onclick="return jump(this);"><img src="/images/skeb/2023-08-24.png" alt="テーリ（飯田はと様）"></a></li>-->
+              <!--<li><a href="#skeb/2023-06-23" onclick="return jump(this);"><img src="/images/skeb/2023-06-23.png" alt="テーリ（飯田はと様）"></a></li>-->
+              <li><a href="#skeb/2023-05-17" onclick="return jump(this);"><img src="/images/skeb/2023-05-17.png" alt="テーリ（あじこま様）"></a></li>
+            </ul>
+
+            <div class="more">
+              <a href="#skeb" onclick="return jump(this);">もっと見る</a>
+            </div>
+          </nav>
+
+          <nav>
+            <h2>etc.</h2>
+
+            <p class="navigation">
+              <a href="https://bydriv.booth.pm/" target="_blank" rel="noreferrer noopener">Booth</a>・<a href="https://www.dlsite.com/home/circle/profile/=/maker_id/RG68520.html" target="_blank" rel="noreferrer noopener">DLsite</a>・<a href="https://ci-en.net/creator/16842" target="_blank" rel="noreferrer noopener">Ci-en</a>・<a href="https://x.com/bydriv" target="_blank" rel="noreferrer noopener">Twitter (X)</a>・<a href="https://skeb.jp/@bydriv" target="_blank" rel="noreferrer noopener">Skeb</a>・<a href="https://note.com/bydriv" target="_blank" rel="noreferrer noopener">note</a>
+            </p>
+          </nav>
+        </div>
+
+        <p class="copyright">
+          © 2018 川向薫
+        </p>
+      </div>
+    </article>
+
+    <div class="target" id="top"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ トップページ</nav>
+      <h2 class="header">最新情報</h2>
+
+      <p>
+        C105（冬コミ）当選しました。2024年12月30日（月）、スペースは【き-15a】です。ぜひ会場まで来てくださいね。よろしくお願いします。
+      </p>
+
+      <div class="center">
+        <img src="/images/news/c105-tousen.png" alt="C105当選！">
+      </div>
+    </article>
+
+    <div class="target" id="about"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#about" onclick="return jump(this);">About</a></nav>
+      <h2 class="header">About</h2>
+
+      <p>
+        ようこそ。ここは同人サークル水無川旅館の公式サイトです。主にアクションゲームを制作しています。
+      </p>
+
+      <h3>水無川旅館について</h3>
+
+      <p>
+        水無川旅館は代表・川向薫の個人サークルです。
+        ゲーム開発の他、音楽活動・漫画制作などを行っています。
+      </p>
+
+      <h3>主な活動拠点</h3>
+
+      <p>
+        リアルイベントではコミケ、デジゲー博、東京ゲームダンジョンに主に参加しています。
+        オンラインでは
+        <a href="https://bydriv.booth.pm/" target="_blank" rel="noreferrer noopener">Booth</a>・<a href="https://www.dlsite.com/home/circle/profile/=/maker_id/RG68520.html" target="_blank" rel="noreferrer noopener">DLsite</a>にて作品を頒布している他、<a href="https://ci-en.net/creator/16842" target="_blank" rel="noreferrer noopener">Ci-en</a>にて開発ブログを書いています。
+        サークル代表・川向薫の個人的なことは<a href="https://x.com/bydriv" target="_blank" rel="noreferrer noopener">Twitter (X)</a>や<a href="https://note.com/bydriv" target="_blank" rel="noreferrer noopener">note</a>に書くことが多いです。
+      </p>
+    </article>
+
+    <div class="target" id="lineup" data-target="true"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#about" onclick="return jump(this);">Lineup</a></nav>
+      <h2 class="header">Lineup</h2>
+
+      <p>
+        水無川旅館がリアルイベントで頒布する作品のラインナップです。
+        随時更新（最終更新：<time datetime="2024-11-10T20:00+09:00">2024/11/10</time>）。
+      </p>
+
+      <h3>【ゲーム】<a href="#games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク 体験版</a> ¥300</h3>
+
+      <div class="center">
+        <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/XR-ERQm1Tik?si=Hgli-aTcn43VZsHh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <h3>【音楽】<a href="#music/dont-let-me-remember" onclick="return jump(this);">ふりむいてなんていられない</a> ¥600</h3>
+
+      <div class="center">
+        <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/YjAPh33MMyE?si=VnF78GddRz9xKRP1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <h3>【ゲーム】<a href="#games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a> ¥1,000</h3>
+
+      <div class="center">
+        <img src="/images/games/hinjanohokori/main.png" alt="Hijack ヒンジヤノホコリ">
+      </div>
+
+      <h3>【ゲーム】<a href="#games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a> ¥1,000</h3>
+
+      <div class="center">
+        <img src="/images/games/hitonomukuro/jacket.png" alt="Hijack ヒトノムクロ">
+      </div>
+
+      <h3>【グッズ】『ふりむいてなんていられない』アクリルフィギュア ¥1,400</h3>
+
+      <div class="center">
+        <img style="aspect-ratio: 1 / 1; max-width: 560px; width: 100%;" src="/images/goods/dont-let-me-remember.png" alt="『ふりむいてなんていられない』アクリルフィギュア">
+      </div>
+    </article>
+
+    <div class="target" id="news"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#news" onclick="return jump(this);">News</a></nav>
+      <h2 class="header">News</h2>
+
+      <ol class="news">
+        <li><time datetime="2024-11-11T20:00+09:00">2024/11/11</time> …… <a href="#news/official-site" onclick="return jump(this);">水無川旅館公式サイト公開！</a></li>
+        <li><time datetime="2024-11-08T17:00+09:00">2024/11/8</time> …… <a href="#news/c105" onclick="return jump(this);">C105当選！</a></li>
+        <li><time datetime="2024-08-12T17:00+20:10">2024/8/12</time> …… <a href="#news/tenshinokokuhaku-experimental" onclick="return jump(this);">『Hijack テンシノコクハク 体験版』Booth公開！</a></li>
+      </ol>
+    </article>
+
+    <div class="target" id="news/official-site"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#news" onclick="return jump(this);">News</a> ▷ <a href="#news/official-site" onclick="return jump(this);">水無川旅館公式サイト公開！</a></nav>
+      <h2 class="header">水無川旅館公式サイト公開！</h2>
+
+      <p>
+        突如思い立って水無川旅館の公式サイトを2日でつくりました。
+        思い立ったが吉日！　デザインはモダンですが、古き良き時代のようにリンクバナーとかもつくってみたいですね！
+        もしリンクしてもよいよ～という方がいたらお知らせください。
+      </p>
+    </article>
+
+    <div class="target" id="news/c105"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#news" onclick="return jump(this);">News</a> ▷ <a href="#news/c105" onclick="return jump(this);">C105当選！</a></nav>
+      <h2 class="header">C105当選！</h2>
+
+      <p>
+        C105（冬コミ）当選しました。2024年12月30日（月）、スペースは【き-15a】です。ぜひ会場まで来てくださいね。よろしくお願いします。
+      </p>
+
+      <div class="center">
+        <img src="/images/news/c105-tousen.png" alt="C105当選！">
+      </div>
+    </article>
+
+    <div class="target" id="news/tenshinokokuhaku-experimental"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#news" onclick="return jump(this);">News</a> ▷ <a href="#news/tenshinokokuhaku-experimental" onclick="return jump(this);">『Hijack テンシノコクハク 体験版』Booth公開！</a></nav>
+      <h2 class="header">『Hijack テンシノコクハク 体験版』Booth公開！</h2>
+
+      <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">『Hijack テンシノコクハク』体験版を Booth で公開しました！<br><br>Booth ページ ⇒ <a href="https://t.co/gal6qZIRCz">https://t.co/gal6qZIRCz</a> <a href="https://t.co/E7tObsQa8s">pic.twitter.com/E7tObsQa8s</a></p>&mdash; 川向薫/冬コミ【き-15a】 (@bydriv) <a href="https://twitter.com/bydriv/status/1822953826867138837?ref_src=twsrc%5Etfw">August 12, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </article>
+
+    <div class="target" id="schedule"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#schedule" onclick="return jump(this);">Schedule</a></nav>
+      <h2 class="header">Schedule</h2>
+
+      <h3>2024</h3>
+
+      <ol class="schedule">
+        <li class="new"><time datetime="2024-12-30T10:30+09:00">2024/12/30</time> …… C105【き-15a】</li>
+        <li><time datetime="2024-11-03T11:00+09:00">2024/11/3</time> …… デジゲー博2024【E-08a】</li>
+        <li><time datetime="2024-08-12T10:30+09:00">2024/8/12</time> …… C104【け-13b】</li>
+        <li><time datetime="2024-04-28T10:30+09:00">2024/4/28</time> …… M3 2024春【A-01a】</li>
+        <li><time datetime="2024-01-21T12:00+09:00">2024/1/21</time> …… 東京ゲームダンジョン4 2日目【D-13】</li>
+        <li><time datetime="2024-01-20T12:00+09:00">2024/1/20</time> …… 東京ゲームダンジョン4 1日目【D-13】</li>
+      </ol>
+
+      <h3>2023</h3>
+
+      <ol class="schedule">
+        <li><time datetime="2023-12-31T10:30+09:00">2023/12/31</time> …… C103【R-61b】</li>
+        <li><time datetime="2023-11-12T11:00+09:00">2023/11/12</time> …… デジゲー博2023【E-01b】</li>
+        <li><time datetime="2023-09-03T11:00+09:00">2023/9/3</time> …… COMITIA145【E-53b】</li>
+        <li><time datetime="2023-05-05T11:00+09:00">2023/5/5</time> …… COMITIA144【そ-38a】</li>
+        <li><time datetime="2023-02-19T11:00+09:00">2023/2/19</time> …… COMITIA143【く-29a】</li>
+      </ol>
+
+      <h3>2022</h3>
+
+      <ol class="schedule">
+        <li><time datetime="2022-11-27T11:00+09:00">2022/11/27</time> …… COMITIA142【L-45a】</li>
+        <li><time datetime="2022-09-04T11:00+09:00">2022/9/4</time> …… COMITIA141【ほ-38a】</li>
+      </ol>
+    </article>
+
+    <div class="target" id="games"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#games" onclick="return jump(this);">Games</a></nav>
+      <h2 class="header">Games</h2>
+
+      <h3><a href="#games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク</a></h3>
+
+      <p>
+        水無川旅館ゲームの第3作！
+        <a href="https://bydriv.booth.pm/items/6000093" target="_blank" rel="noreferrer noopener">Booth</a>にて体験版公開中！
+      </p>
+
+      <div class="center">
+        <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/XR-ERQm1Tik?si=Hgli-aTcn43VZsHh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <h3><a href="#games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a></h3>
+
+      <p>
+        水無川旅館ゲームの第2作！
+        <a href="https://www.dlsite.com/home/work/=/product_id/RJ01128325.html" target="_blank" rel="noreferrer noopener">DLsite</a>にて公開中！
+      </p>
+
+      <div class="center">
+        <img src="/images/games/hinjanohokori/main.png" alt="Hijack ヒンジヤノホコリ">
+      </div>
+
+      <h3><a href="#games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a></h3>
+
+      <p>
+        水無川旅館ゲームの第1作！
+        <a href="https://www.dlsite.com/home/work/=/product_id/RJ416420.html" target="_blank" rel="noreferrer noopener">DLsite</a>にて公開中！
+      </p>
+
+      <div class="center">
+        <img src="/images/games/hitonomukuro/jacket.png" alt="Hijack ヒトノムクロ">
+      </div>
+    </article>
+
+    <div class="target" id="games/tenshinokokuhaku"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#games" onclick="return jump(this);">Games</a> ▷ <a href="#games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク</a></nav>
+      <h2 class="header">Hijack テンシノコクハク</h2>
+
+      <p>
+        水無川旅館ゲームの第3作！
+        <a href="https://bydriv.booth.pm/items/6000093" target="_blank" rel="noreferrer noopener">Booth</a>にて体験版公開中！
+      </p>
+
+      <div class="center">
+        <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/XR-ERQm1Tik?si=Hgli-aTcn43VZsHh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <h3>登場人物紹介</h3>
+
+      <div class="two-column-l">
+        <div class="left">
+          <img class="full" src="/images/games/tenshinokokuhaku/teiri.png" alt="ミナガワ・テーリ">
+        </div>
+
+        <div class="right">
+          <h4>ミナガワ・テーリ</h4>
+
+          <p>
+            　主人公の女の子。色々依頼を受けて解決するお仕事をしている。<br />
+            　一応探偵業として確定申告しているので探偵ということになるし、調査が主な業務であって戦闘は請け負っていないのだが、なぜか毎回紆余曲折あってド派手なアクションをする羽目になる。<br />
+            　情緒豊かで共感性の高い性格だがお仕事では余計な私情は挟まないドライな一面も。
+          </p>
+        </div>
+      </div>
+
+      <!--
+      <div class="two-column-r">
+        <div class="left">
+          <h4>エヴァリー・リバーズ</h4>
+        </div>
+
+        <div class="right">
+          <img class="full" src="/images/games/tenshinokokuhaku/everly.png" alt="エヴァリー・リバーズ">
+        </div>
+      </div>
+
+      <div class="two-column-l">
+        <div class="left">
+          <img class="full" src="/images/games/tenshinokokuhaku/ai.png" alt="近衛逢">
+        </div>
+
+        <div class="right">
+          <h4>近衛逢</h4>
+        </div>
+      </div>
+      -->
+    </article>
+
+    <div class="target" id="games/hinjanohokori"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#games" onclick="return jump(this);">Games</a> ▷ <a href="#games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a></nav>
+      <h2 class="header">Hijack ヒンジヤノホコリ</h2>
+
+      <p>
+        水無川旅館ゲームの第2作！
+        <a href="https://www.dlsite.com/home/work/=/product_id/RJ01128325.html" target="_blank" rel="noreferrer noopener">DLsite</a>にて公開中！
+      </p>
+
+      <div class="center">
+        <img src="/images/games/hinjanohokori/main.png" alt="Hijack ヒンジヤノホコリ">
+      </div>
+    </article>
+
+    <div class="target" id="games/hitonomukuro"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#games" onclick="return jump(this);">Games</a> ▷ <a href="#games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a></nav>
+      <h2 class="header">Hijack ヒトノムクロ</h2>
+
+      <p>
+        水無川旅館ゲームの第1作！
+        <a href="https://www.dlsite.com/home/work/=/product_id/RJ416420.html" target="_blank" rel="noreferrer noopener">DLsite</a>にて公開中！
+      </p>
+
+      <div class="center">
+        <img src="/images/games/hitonomukuro/jacket.png" alt="Hijack ヒトノムクロ">
+      </div>
+    </article>
+
+    <div class="target" id="music"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#music" onclick="return jump(this);">Music</a></nav>
+      <h2 class="header">Music</h2>
+      <h3>ふりむいてなんていられない</h3>
+
+      <p>
+        水無川旅館音楽の第1作！
+      </p>
+
+      <div class="center">
+        <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/YjAPh33MMyE?si=VnF78GddRz9xKRP1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <h3>ミナガワ・テーリ Ch.</h3>
+
+      <p>
+        Hijackの主人公・テーリがVSingerに！？
+      </p>
+
+      <div class="center">
+        <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/Kx3LlSS7lj0?si=9JkDq-ZSB_1lkdPM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </article>
+
+    <div class="target" id="music/dont-let-me-remember"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#music" onclick="return jump(this);">Music</a> ▷ <a href="#music/dont-let-me-remember" onclick="return jump(this);">ふりむいてなんていられない</a></nav>
+      <h2 class="header">ふりむいてなんていられない</h2>
+
+      <p>
+        水無川旅館音楽の第1作！
+      </p>
+
+      <div class="center">
+        <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/YjAPh33MMyE?si=VnF78GddRz9xKRP1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </article>
+
+    <div class="target" id="music/minagawa-teiri-ch"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#music" onclick="return jump(this);">Music</a> ▷ <a href="#music/minagawa-teiri-ch" onclick="return jump(this);">ミナガワ・テーリ Ch.</a></nav>
+      <h2 class="header">ミナガワ・テーリ Ch.</h2>
+
+      <p>
+        Hijackの主人公・テーリがVSingerに！？
+      </p>
+
+      <div class="center">
+        <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/Kx3LlSS7lj0?si=9JkDq-ZSB_1lkdPM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </article>
+
+    <div class="target" id="skeb"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a></nav>
+      <h2 class="header">Skeb</h2>
+
+      <ul class="gallery">
+        <li><a href="#skeb/2024-11-09" onclick="return jump(this);"><img src="/images/skeb/2024-11-09.png" alt="ポッキーテーリ（飯田はと様）"></a></li>
+        <li><a href="#skeb/2024-10-16" onclick="return jump(this);"><img src="/images/skeb/2024-10-16.png" alt="ヴァンパイアテーリ（飯田はと様）"></a></li>
+        <li><a href="#skeb/2024-10-12" onclick="return jump(this);"><img src="/images/skeb/2024-10-12.png" alt="テーリ（あじこま様）"></a></li>
+        <li><a href="#skeb/2024-09-06" onclick="return jump(this);"><img src="/images/skeb/2024-09-06.png" alt="お月見テーリ（飯田はと様）"></a></li>
+        <li><a href="#skeb/2024-08-18" onclick="return jump(this);"><img src="/images/skeb/2024-08-18.png" alt="テーリ×たけのこVRライブ！（飯田はと様）"></a></li>
+        <li><a href="#skeb/2024-08-06" onclick="return jump(this);"><img src="/images/skeb/2024-08-06.png" alt="水着テーリ（飯田はと様）"></a></li>
+        <li><a href="#skeb/2024-07-13" onclick="return jump(this);"><img src="/images/skeb/2024-07-13.png" alt="テーリ×たけのこ晴れ姿！（飯田はと様）"></a></li>
+        <li><a href="#skeb/2024-02-16" onclick="return jump(this);"><img src="/images/skeb/2024-02-16.png" alt="アイドルテーリ（あじこま様）"></a></li>
+        <li><a href="#skeb/2023-08-24" onclick="return jump(this);"><img src="/images/skeb/2023-08-24.png" alt="テーリ（飯田はと様）"></a></li>
+        <li><a href="#skeb/2023-06-23" onclick="return jump(this);"><img src="/images/skeb/2023-06-23.png" alt="テーリ（飯田はと様）"></a></li>
+        <li><a href="#skeb/2023-05-17" onclick="return jump(this);"><img src="/images/skeb/2023-05-17.png" alt="テーリ（あじこま様）"></a></li>
+      </ul>
+    </article>
+
+    <div class="target" id="skeb/2024-11-09"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-11-09" onclick="return jump(this);">2024/11/9 飯田はと様</a></nav>
+      <h2 class="header">Skeb 2024/11/9 飯田はと様</h2>
+
+      <p>
+        <a href="https://skeb.jp/@Hato_to_illust/works/69" target="_blank" rel="noreferrer noopener">Skeb 作品ページ</a>
+      </p>
+
+      <div class="center">
+        <img src="/images/skeb/2024-11-09.png" alt="ポッキーテーリ（飯田はと様）">
+      </div>
+    </article>
+
+    <div class="target" id="skeb/2024-10-16"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-10-16" onclick="return jump(this);">2024/10/16 飯田はと様</a></nav>
+      <h2 class="header">Skeb 2024/10/16 飯田はと様</h2>
+
+      <p>
+        <a href="https://skeb.jp/@Hato_to_illust/works/65" target="_blank" rel="noreferrer noopener">Skeb 作品ページ</a>
+      </p>
+
+      <div class="center">
+        <img src="/images/skeb/2024-10-16.png" alt="ヴァンパイアテーリ（飯田はと様）">
+      </div>
+    </article>
+
+    <div class="target" id="skeb/2024-10-12"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-10-12" onclick="return jump(this);">2024/10/12 あじこま様</a></nav>
+      <h2 class="header">Skeb 2024/10/12 あじこま様</h2>
+
+      <p>
+        <a href="https://skeb.jp/@ajicoma/works/39" target="_blank" rel="noreferrer noopener">Skeb 作品ページ</a>
+      </p>
+
+      <div class="center">
+        <img src="/images/skeb/2024-10-12.png" alt="テーリ（あじこま様）">
+      </div>
+    </article>
+
+    <div class="target" id="skeb/2024-09-06"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-09-06" onclick="return jump(this);">2024/9/06 飯田はと様</a></nav>
+      <h2 class="header">Skeb 2024/9/06 飯田はと様</h2>
+
+      <p>
+        <a href="https://skeb.jp/@Hato_to_illust/works/60" target="_blank" rel="noreferrer noopener">Skeb 作品ページ</a>
+      </p>
+
+      <div class="center">
+        <img src="/images/skeb/2024-09-06.png" alt="お月見テーリ（飯田はと様）">
+      </div>
+    </article>
+
+    <div class="target" id="skeb/2024-08-18"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-08-18" onclick="return jump(this);">2024/8/18 飯田はと様</a></nav>
+      <h2 class="header">Skeb 2024/8/18 飯田はと様</h2>
+
+      <p>
+        <a href="https://skeb.jp/@Hato_to_illust/works/58" target="_blank" rel="noreferrer noopener">Skeb 作品ページ</a>
+      </p>
+
+      <div class="center">
+        <img src="/images/skeb/2024-08-18.png" alt="テーリ×たけのこVRライブ！（飯田はと様）">
+      </div>
+    </article>
+
+    <div class="target" id="skeb/2024-08-06"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-08-06" onclick="return jump(this);">2024/8/6 飯田はと様</a></nav>
+      <h2 class="header">Skeb 2024/8/6 飯田はと様</h2>
+
+      <p>
+        <a href="https://skeb.jp/@Hato_to_illust/works/55" target="_blank" rel="noreferrer noopener">Skeb 作品ページ</a>
+      </p>
+
+      <div class="center">
+        <img src="/images/skeb/2024-08-06.png" alt="水着テーリ（飯田はと様）">
+      </div>
+    </article>
+
+    <div class="target" id="skeb/2024-07-13"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-07-13" onclick="return jump(this);">2024/7/13 飯田はと様</a></nav>
+      <h2 class="header">Skeb 2024/7/13 飯田はと様</h2>
+
+      <p>
+        <a href="https://skeb.jp/@Hato_to_illust/works/54" target="_blank" rel="noreferrer noopener">Skeb 作品ページ</a>
+      </p>
+
+      <div class="center">
+        <img src="/images/skeb/2024-07-13.png" alt="テーリ×たけのこ晴れ姿！（飯田はと様）">
+      </div>
+    </article>
+
+    <div class="target" id="skeb/2024-02-16"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-02-16" onclick="return jump(this);">2024/2/16 あじこま様</a></nav>
+      <h2 class="header">Skeb 2024/2/16 あじこま様</h2>
+
+      <p>
+        <a href="https://skeb.jp/@ajicoma/works/37" target="_blank" rel="noreferrer noopener">Skeb 作品ページ</a>
+      </p>
+
+      <div class="center">
+        <img src="/images/skeb/2024-02-16.png" alt="アイドルテーリ（あじこま様）">
+      </div>
+    </article>
+
+    <div class="target" id="skeb/2023-08-24"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2023-08-24" onclick="return jump(this);">2023/8/24 飯田はと様</a></nav>
+      <h2 class="header">Skeb 2023/8/24 飯田はと様</h2>
+
+      <p>
+        <a href="https://skeb.jp/@Hato_to_illust/works/30" target="_blank" rel="noreferrer noopener">Skeb 作品ページ</a>
+      </p>
+
+      <div class="center">
+        <img src="/images/skeb/2023-08-24.png" alt="テーリ（飯田はと様）">
+      </div>
+    </article>
+
+    <div class="target" id="skeb/2023-06-23"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2023-06-23" onclick="return jump(this);">2023/6/23 飯田はと様</a></nav>
+      <h2 class="header">Skeb 2023/6/23 飯田はと様</h2>
+
+      <p>
+        <a href="https://skeb.jp/@Hato_to_illust/works/21" target="_blank" rel="noreferrer noopener">Skeb 作品ページ</a>
+      </p>
+
+      <div class="center">
+        <img src="/images/skeb/2023-06-23.png" alt="テーリ（飯田はと様）">
+      </div>
+    </article>
+
+    <div class="target" id="skeb/2023-05-17"></div>
+    <article class="main">
+      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2023-05-17" onclick="return jump(this);">2023/5/17 あじこま様</a></nav>
+      <h2 class="header">Skeb 2023/5/17 あじこま様</h2>
+
+      <p>
+        <a href="https://skeb.jp/@ajicoma/works/18" target="_blank" rel="noreferrer noopener">Skeb 作品ページ</a>
+      </p>
+
+      <div class="center">
+        <img src="/images/skeb/2023-05-17.png" alt="テーリ（あじこま様）">
+      </div>
+    </article>
+  </article>
+</div>

@@ -1,0 +1,654 @@
+@font-face {
+    font-family: "RocknRoll";
+    src: url("/fonts/RocknRollOne-Regular.ttf") format("truetype");
+}
+
+/*******************************************************************************
+ * Block elements - Type A
+ ******************************************************************************/
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*******************************************************************************
+ * Block elements - Type B
+ ******************************************************************************/
+article, li {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+
+    font-family: "RocknRoll";
+    font-weight: normal;
+}
+
+/*******************************************************************************
+ * Block elements - Type C
+ ******************************************************************************/
+h1, h2, h3, h4, p, ol, ul {
+    margin: 16px;
+    padding: 0px;
+    width: calc(100% - 32px);
+    height: auto;
+
+    font-family: "RocknRoll";
+    font-weight: normal;
+
+    text-align: justify;
+}
+
+/*******************************************************************************
+ * <html />
+ ******************************************************************************/
+html {
+    overflow: hidden;
+    background-color: #121110;
+}
+
+/*******************************************************************************
+ * <div class="background" />
+ ******************************************************************************/
+div.background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    background-image: radial-gradient(
+        rgb(18 17 16 / 50%),
+        rgb(18 17 16)
+    ), url("/images/skeb/2024-11-09.png");
+
+    z-index: -100;
+}
+
+div.background:not(:has(~ div.world article.container div.target:target:not([data-target]) + article.main)):not(:has(~ div.world article.container div.target[data-target="true"] + article.main)) {
+    background-position: center;
+    opacity: 1;
+
+    transition: background-position 0.2s 0.3s, opacity 0.2s 0.3s;
+}
+
+div.background:has(~ div.world article.container div.target:target:not([data-target]) + article.main),
+div.background:has(~ div.world article.container div.target[data-target="true"] + article.main) {
+    background-position: center;
+    opacity: 0.5;
+
+    transition: background-position 0.2s, opacity 0.2s;
+}
+
+/*******************************************************************************
+ * <body />
+ ******************************************************************************/
+body {
+    position: fixed;
+    overflow: hidden;
+    inset: 0px;
+}
+
+/*******************************************************************************
+ * <article />
+ ******************************************************************************/
+article {
+    overflow: hidden;
+}
+
+/*******************************************************************************
+ * <article class="container" />
+ ******************************************************************************/
+div.world {
+    width: 100%;
+    height: 100%;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-gutter: stable both-edges;
+}
+
+article.container {
+    display: grid;
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+    article.container:not(:has(div.target:target:not([data-target]) + article.main)):not(:has(div.target[data-target="true"] + article.main)) {
+        grid-template-rows: auto;
+        grid-template-columns: 100% 0%;
+
+        transition: grid-template-columns 0.2s 0.3s;
+    }
+
+    article.container:has(div.target:target:not([data-target]) + article.main),
+    article.container:has(div.target[data-target="true"] + article.main) {
+        grid-template-rows: auto;
+        grid-template-columns: 512px 1fr;
+
+        transition: grid-template-columns 0.2s;
+    }
+}
+
+@media (orientation: portrait) or (max-width: 1024px) {
+    article.container:has(div.target#top:target:not([data-target]) + article.main),
+    article.container:has(div.target#top[data-target="true"] + article.main),
+    article.container:not(:has(div.target:target:not([data-target]) + article.main)):not(:has(div.target[data-target="true"] + article.main)) {
+        grid-template-rows: auto;
+        grid-template-columns: 100% 0%;
+
+        transition: grid-template-columns 0s 0.3s;
+    }
+
+    article.container:has(div.target:not(#top):target:not([data-target]) + article.main),
+    article.container:has(div.target:not(#top)[data-target="true"] + article.main) {
+        grid-template-rows: auto;
+        grid-template-columns: 0% 100%;
+
+        transition: grid-template-columns 0s 0.2s;
+    }
+}
+
+/*******************************************************************************
+ * <article class="top" />
+ ******************************************************************************/
+article.top {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+article.top div.root {
+    margin: auto;
+
+    width: 100%;
+    max-width: 480px;
+}
+
+article.top div.entrance p {
+    animation: blink 1.2s linear infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+article.top:not(:has(~ div.target:target:not([data-target]) + article.main)):not(:has(~ div.target[data-target="true"] + article.main)) div.entrance,
+article.top:has(~ div.target:target:not([data-target]) + article.main) div.summary,
+article.top:has(~ div.target[data-target="true"] + article.main) div.summary {
+    height: auto;
+    opacity: 100%;
+
+    transition: height 0s 0.1s, opacity 0.1s 0.1s;
+}
+
+article.top:has(~ div.target:target:not([data-target]) + article.main) div.entrance,
+article.top:has(~ div.target[data-target="true"] + article.main) div.entrance,
+article.top:not(:has(~ div.target:target:not([data-target]) + article.main)):not(:has(~ div.target[data-target="true"] + article.main)) div.summary {
+    height: 0;
+    opacity: 0%;
+    pointer-events: none;
+
+    transition: height 0s 0.1s, opacity 0.1s;
+}
+
+@media (orientation: portrait) or (max-width: 1024px) {
+    article.top:has(~ div.target:not(#top):target:not([data-target]) + article.main),
+    article.top:has(~ div.target:not(#top)[data-target="true"] + article.main) {
+        height: 0;
+        opacity: 0%;
+        pointer-events: none;
+
+        transition: height 0s 0.2s, opacity 0.2s;
+    }
+
+    article.top:has(~ div.target#top:target:not([data-target]) + article.main),
+    article.top:has(~ div.target[data-target="true"]#top + article.main),
+    article.top:not(:has(~ div.target:target:not([data-target]) + article.main)):not(:has(~ div.target[data-target="true"] + article.main)) {
+        height: auto;
+        opacity: 100%;
+
+        transition: height 0s 0.3s, opacity 0.2s 0.3s;
+    }
+}
+
+/*******************************************************************************
+ * <div class="target" />
+ ******************************************************************************/
+div.target {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+/*******************************************************************************
+ * <article class="main" />
+ ******************************************************************************/
+article.main {
+    grid-row: 1 / 4;
+    grid-column: 2;
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+    div.target:target:not([data-target]) + article.main,
+    div.target[data-target="true"] + article.main {
+        height: auto;
+        opacity: 100%;
+
+        transition: height 0s 0.2s, opacity 0.3s 0.2s;
+    }
+
+    div.target:not(:target):not([data-target="true"]) + article.main {
+        height: 0;
+        opacity: 0%;
+        pointer-events: none;
+
+        transition: height 0s 0.3s, opacity 0.3s;
+    }
+}
+
+@media (orientation: portrait) or (max-width: 1024px) {
+    div.target:not(#top):target:not([data-target]) + article.main,
+    div.target:not(#top)[data-target="true"] + article.main {
+        height: auto;
+        opacity: 100%;
+
+        transition: height 0s 0.2s, opacity 0.3s 0.2s;
+    }
+
+    div.target#top:target:not([data-target]) + article.main,
+    div.target#top[data-target="true"] + article.main,
+    div.target:not(:target):not([data-target="true"]) + article.main {
+        height: 0;
+        opacity: 0%;
+        pointer-events: none;
+
+        transition: height 0s 0.3s, opacity 0.3s;
+    }
+}
+
+/*******************************************************************************
+ * <nav class="tree" />
+ ******************************************************************************/
+@media (orientation: landscape) and (min-width: 1024px) {
+    nav.tree {
+        margin: 16px;
+        height: 24px;
+
+        font-size: 16px;
+        color: #AFAAA5;
+    }
+}
+
+@media (orientation: portrait) or (max-width: 1024px) {
+    nav.tree {
+        margin: 16px;
+
+        font-size: 16px;
+        color: #AFAAA5;
+    }
+}
+
+/*******************************************************************************
+ * <h1 />
+ ******************************************************************************/
+h1 {
+    display: flex;
+    height: 270px;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 40px;
+    color: #EFEEED;
+}
+
+/*******************************************************************************
+ * <h1 class="header" />
+ ******************************************************************************/
+h1.header {
+    margin-bottom: -80px;
+}
+
+h1.header img {
+    width: 100%;
+    max-width: 480px;
+}
+
+/*******************************************************************************
+ * <h2 />
+ ******************************************************************************/
+h2 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    font-weight: bold;
+    font-size: 16px;
+    color: #DFDDDB;
+}
+
+/*******************************************************************************
+ * <h2 class="header" />
+ ******************************************************************************/
+@media (orientation: landscape) and (min-width: 1024px) {
+    h2.header {
+        display: flex;
+        width: calc(100% - 32px);
+        height: calc(270px - 80px);
+        margin: 16px 16px -24px;
+
+        align-items: center;
+
+        font-size: 40px;
+    }
+}
+
+@media (orientation: portrait) or (max-width: 1024px) {
+    h2.header {
+        display: flex;
+        width: calc(100% - 32px);
+        height: auto;
+        margin: 16px;
+
+        align-items: center;
+
+        font-size: 40px;
+    }
+}
+
+/*******************************************************************************
+ * <h3 />
+ ******************************************************************************/
+h3 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    font-weight: bold;
+    font-size: 16px;
+    color: #CFCCC9;
+}
+
+/*******************************************************************************
+ * <h4 />
+ ******************************************************************************/
+h4 {
+    font-weight: bold;
+    font-size: 16px;
+    color: #BFBBB7;
+}
+
+/*******************************************************************************
+ * <p />
+ ******************************************************************************/
+p {
+    font-size: 16px;
+    color: #AFAAA5;
+}
+
+/*******************************************************************************
+ * <p class="navigation" />
+ ******************************************************************************/
+p.navigation {
+    text-align: center;
+}
+
+/*******************************************************************************
+ * <p class="copyright" />
+ ******************************************************************************/
+p.copyright {
+    text-align: center;
+}
+
+/*******************************************************************************
+ * <ol />
+ ******************************************************************************/
+ol {
+    list-style: none;
+
+    font-size: 16px;
+    color: #AFAAA5;
+}
+
+/*******************************************************************************
+ * <ol class="news" />
+ ******************************************************************************/
+ol.news {}
+
+ol.news li {
+    border-bottom: 1px dashed #AFAAA5;
+}
+
+/*******************************************************************************
+ * <ol class="schedule" />
+ ******************************************************************************/
+ol.schedule {}
+
+ol.schedule li {
+    border-bottom: 1px dashed #AFAAA5;
+}
+
+ol.schedule li.new {
+    border-bottom: 1px dashed #EFEEED;
+
+    color: #EFEEED;
+}
+
+/*******************************************************************************
+ * <ol class="games" />
+ ******************************************************************************/
+ol.games {}
+
+/*******************************************************************************
+ * <ol class="music" />
+ ******************************************************************************/
+ol.music {}
+
+
+/*******************************************************************************
+ * <ul />
+ ******************************************************************************/
+ul {
+    list-style: none;
+
+    font-size: 16px;
+    color: #AFAAA5;
+}
+
+/*******************************************************************************
+ * <ul class="gallery" />
+ ******************************************************************************/
+article.top ul.gallery {
+    display: flex;
+
+    width: calc(100% - 32px);
+    max-width: 480px;
+
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    row-gap: 4px;
+    column-gap: 4px;
+}
+
+article.top ul.gallery li {
+    display: inline-block;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+article.top ul.gallery img {
+    height: 108px;
+    max-width: 192px;
+}
+
+/*******************************************************************************
+ * <ul class="gallery" />
+ ******************************************************************************/
+article.main ul.gallery {
+    display: flex;
+
+    width: calc(100% - 32px);
+
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    row-gap: 8px;
+    column-gap: 8px;
+}
+
+article.main ul.gallery li {
+    display: inline-block;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+article.main ul.gallery img {
+    height: 216px;
+    max-width: 384px;
+}
+
+/*******************************************************************************
+ * <div class="center" />
+ ******************************************************************************/
+@media (orientation: landscape) and (min-width: 1024px) {
+    div.center {
+        margin: 16px;
+
+        text-align: center;
+    }
+
+    div.center img {
+        max-width: calc(100% - 32px);
+        max-height: 100vh;
+    }
+}
+
+@media (orientation: portrait) or (max-width: 1024px) {
+    div.center {
+        text-align: center;
+    }
+
+    div.center img {
+        max-width: 100%;
+        max-height: 100vh;
+    }
+}
+
+/*******************************************************************************
+ * <div class="two-column" />
+ ******************************************************************************/
+@media (orientation: landscape) and (min-width: 1024px) {
+    div.two-column-l {
+        display: grid;
+
+        grid-template-rows: auto;
+        grid-template-columns: 67% 33%;
+    }
+
+    div.two-column-r {
+        display: grid;
+
+        grid-template-rows: auto;
+        grid-template-columns: 33% 67%;
+    }
+
+    div.two-column-l div.left,
+    div.two-column-r div.left {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    div.two-column-l div.right,
+    div.two-column-r div.right {
+        grid-row: 1;
+        grid-column: 2;
+    }
+}
+
+@media (orientation: portrait) or (max-width: 1024px) {
+    div.two-column-l {
+        display: grid;
+
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+    }
+
+    div.two-column-r {
+        display: grid;
+
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+    }
+
+    div.two-column-l div.left,
+    div.two-column-r div.right {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    div.two-column-l div.right,
+    div.two-column-r div.left {
+        grid-row: 2;
+        grid-column: 1;
+    }
+}
+
+/*******************************************************************************
+ * <div class="more" />
+ ******************************************************************************/
+div.more {
+    margin: -12px 16px 16px;
+    font-size: 12px;
+    text-align: right;
+}
+
+/*******************************************************************************
+ * <a />
+ ******************************************************************************/
+a {
+    color: #66AAEE;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*******************************************************************************
+ * <img class="full" />
+ ******************************************************************************/
+img.full {
+    width: 100%;
+}
+
+/*******************************************************************************
+ * <img class="half" />
+ ******************************************************************************/
+img.half {
+    width: 50%;
+}
+
+/*******************************************************************************
+ * <img class="fit" />
+ ******************************************************************************/
+img.fit {
+    object-fit: fill;
+}
+
+/*******************************************************************************
+ * <iframe class="youtube" />
+ ******************************************************************************/
+iframe.youtube {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+}
