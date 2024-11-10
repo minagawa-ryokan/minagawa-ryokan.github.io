@@ -13,6 +13,8 @@ ALL := \
   music \
   music/dont-let-me-remember \
   music/minagawa-teiri-ch \
+  memorial \
+  memorial/2024-11-10 \
   skeb \
   skeb/2024-11-09 \
   skeb/2024-10-16 \
