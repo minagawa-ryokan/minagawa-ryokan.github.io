@@ -97,7 +97,7 @@
         return function (link) {
             var href = link.getAttribute("href");
 
-            if (!href.startsWith("#")) {
+            if (!href.startsWith("/")) {
                 return;
             }
 
@@ -115,12 +115,12 @@
   <article class="container">
     <article class="top">
       <div class="root">
-        <h1 class="header"><a href="#" onclick="return jump(this);"><img src="/images/minagawa-ryokan-logo.png" alt="水無川旅館"></a></h1>
+        <h1 class="header"><a href="/" onclick="return jump(this);"><img src="/images/minagawa-ryokan-logo.png" alt="水無川旅館"></a></h1>
 
         <div class="entrance">
           <nav>
             <p class="navigation">
-              <a href="#top" onclick="return jump(this);">CLICK HERE TO ENTER</a>
+              <a href="/top" onclick="return jump(this);">CLICK HERE TO ENTER</a>
             </p>
           </nav>
         </div>
@@ -128,7 +128,7 @@
         <div class="summary">
           <nav>
             <p class="navigation">
-              <a href="#top" onclick="return jump(this);">√</a>・<a href="#about" onclick="return jump(this);">About</a>・<a href="#lineup" onclick="return jump(this);">Lineup</a>
+              <a href="/top" onclick="return jump(this);">√</a>・<a href="/about" onclick="return jump(this);">About</a>・<a href="/lineup" onclick="return jump(this);">Lineup</a>
             </p>
           </nav>
 
@@ -136,14 +136,14 @@
             <h2>News</h2>
 
             <ol class="news">
-              <li><time datetime="2024-11-11T04:00+09:00">2024/11/11</time> …… <a href="#memorial/2024-08-16" onclick="return jump(this);">ネネクラの写真</a>更新！</li>
-              <li><time datetime="2024-11-11T03:00+09:00">2024/11/11</time> …… <a href="#memorial/2024-11-10" onclick="return jump(this);">狐ノ里たけのこさんとツーショ</a>更新！</li>
-              <li><time datetime="2024-11-10T20:00+09:00">2024/11/10</time> …… <a href="#news/official-site" onclick="return jump(this);">水無川旅館公式サイト公開！</a></li>
-              <li><time datetime="2024-11-08T17:00+09:00">2024/11/8</time> …… <a href="#news/c105" onclick="return jump(this);">C105当選！</a></li>
+              <li><time datetime="2024-11-11T04:00+09:00">2024/11/11</time> …… <a href="/memorial/2024-08-16" onclick="return jump(this);">ネネクラの写真</a>更新！</li>
+              <li><time datetime="2024-11-11T03:00+09:00">2024/11/11</time> …… <a href="/memorial/2024-11-10" onclick="return jump(this);">狐ノ里たけのこさんとツーショ</a>更新！</li>
+              <li><time datetime="2024-11-10T20:00+09:00">2024/11/10</time> …… <a href="/news/official-site" onclick="return jump(this);">水無川旅館公式サイト公開！</a></li>
+              <li><time datetime="2024-11-08T17:00+09:00">2024/11/8</time> …… <a href="/news/c105" onclick="return jump(this);">C105当選！</a></li>
             </ol>
 
             <div class="more">
-              <a href="#news" onclick="return jump(this);">もっと見る</a>
+              <a href="/news" onclick="return jump(this);">もっと見る</a>
             </div>
           </nav>
 
@@ -155,7 +155,7 @@
             </ol>
 
             <div class="more">
-              <a href="#schedule" onclick="return jump(this);">もっと見る</a>
+              <a href="/schedule" onclick="return jump(this);">もっと見る</a>
             </div>
           </nav>
 
@@ -163,13 +163,13 @@
             <h2>Games</h2>
 
             <ol class="games">
-              <li><a href="#games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク</a></li>
-              <li><a href="#games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a></li>
-              <li><a href="#games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a></li>
+              <li><a href="/games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク</a></li>
+              <li><a href="/games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a></li>
+              <li><a href="/games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a></li>
             </ol>
 
             <div class="more">
-              <a href="#games" onclick="return jump(this);">もっと見る</a>
+              <a href="/games" onclick="return jump(this);">もっと見る</a>
             </div>
           </nav>
 
@@ -177,12 +177,12 @@
             <h2>Music</h2>
 
             <ol class="music">
-              <li><a href="#music/dont-let-me-remember" onclick="return jump(this);">ふりむいてなんていられない</a></li>
-              <li><a href="#music/minagawa-teiri-ch" onclick="return jump(this);">ミナガワ・テーリ Ch.</a></li>
+              <li><a href="/music/dont-let-me-remember" onclick="return jump(this);">ふりむいてなんていられない</a></li>
+              <li><a href="/music/minagawa-teiri-ch" onclick="return jump(this);">ミナガワ・テーリ Ch.</a></li>
             </ol>
 
             <div class="more">
-              <a href="#music" onclick="return jump(this);">もっと見る</a>
+              <a href="/music" onclick="return jump(this);">もっと見る</a>
             </div>
           </nav>
 
@@ -190,21 +190,21 @@
             <h2>Skeb</h2>
 
             <ul class="gallery">
-              <li><a href="#skeb/2024-11-09" onclick="return jump(this);"><img src="/images/skeb/2024-11-09.png" alt="ポッキーテーリ（飯田はと様）"></a></li>
-              <li><a href="#skeb/2024-10-16" onclick="return jump(this);"><img src="/images/skeb/2024-10-16.png" alt="ヴァンパイアテーリ（飯田はと様）"></a></li>
-              <li><a href="#skeb/2024-10-12" onclick="return jump(this);"><img src="/images/skeb/2024-10-12.png" alt="テーリ（あじこま様）"></a></li>
-              <li><a href="#skeb/2024-09-06" onclick="return jump(this);"><img src="/images/skeb/2024-09-06.png" alt="お月見テーリ（飯田はと様）"></a></li>
-              <li><a href="#skeb/2024-08-18" onclick="return jump(this);"><img src="/images/skeb/2024-08-18.png" alt="テーリ×たけのこVRライブ！（飯田はと様）"></a></li>
-              <li><a href="#skeb/2024-08-06" onclick="return jump(this);"><img src="/images/skeb/2024-08-06.png" alt="水着テーリ（飯田はと様）"></a></li>
-              <li><a href="#skeb/2024-07-13" onclick="return jump(this);"><img src="/images/skeb/2024-07-13.png" alt="テーリ×たけのこ晴れ姿！（飯田はと様）"></a></li>
-              <li><a href="#skeb/2024-02-16" onclick="return jump(this);"><img src="/images/skeb/2024-02-16.png" alt="アイドルテーリ（あじこま様）"></a></li>
-              <!--<li><a href="#skeb/2023-08-24" onclick="return jump(this);"><img src="/images/skeb/2023-08-24.png" alt="テーリ（飯田はと様）"></a></li>-->
-              <!--<li><a href="#skeb/2023-06-23" onclick="return jump(this);"><img src="/images/skeb/2023-06-23.png" alt="テーリ（飯田はと様）"></a></li>-->
-              <li><a href="#skeb/2023-05-17" onclick="return jump(this);"><img src="/images/skeb/2023-05-17.png" alt="テーリ（あじこま様）"></a></li>
+              <li><a href="/skeb/2024-11-09" onclick="return jump(this);"><img src="/images/skeb/2024-11-09.png" alt="ポッキーテーリ（飯田はと様）"></a></li>
+              <li><a href="/skeb/2024-10-16" onclick="return jump(this);"><img src="/images/skeb/2024-10-16.png" alt="ヴァンパイアテーリ（飯田はと様）"></a></li>
+              <li><a href="/skeb/2024-10-12" onclick="return jump(this);"><img src="/images/skeb/2024-10-12.png" alt="テーリ（あじこま様）"></a></li>
+              <li><a href="/skeb/2024-09-06" onclick="return jump(this);"><img src="/images/skeb/2024-09-06.png" alt="お月見テーリ（飯田はと様）"></a></li>
+              <li><a href="/skeb/2024-08-18" onclick="return jump(this);"><img src="/images/skeb/2024-08-18.png" alt="テーリ×たけのこVRライブ！（飯田はと様）"></a></li>
+              <li><a href="/skeb/2024-08-06" onclick="return jump(this);"><img src="/images/skeb/2024-08-06.png" alt="水着テーリ（飯田はと様）"></a></li>
+              <li><a href="/skeb/2024-07-13" onclick="return jump(this);"><img src="/images/skeb/2024-07-13.png" alt="テーリ×たけのこ晴れ姿！（飯田はと様）"></a></li>
+              <li><a href="/skeb/2024-02-16" onclick="return jump(this);"><img src="/images/skeb/2024-02-16.png" alt="アイドルテーリ（あじこま様）"></a></li>
+              <!--<li><a href="/skeb/2023-08-24" onclick="return jump(this);"><img src="/images/skeb/2023-08-24.png" alt="テーリ（飯田はと様）"></a></li>-->
+              <!--<li><a href="/skeb/2023-06-23" onclick="return jump(this);"><img src="/images/skeb/2023-06-23.png" alt="テーリ（飯田はと様）"></a></li>-->
+              <li><a href="/skeb/2023-05-17" onclick="return jump(this);"><img src="/images/skeb/2023-05-17.png" alt="テーリ（あじこま様）"></a></li>
             </ul>
 
             <div class="more">
-              <a href="#skeb" onclick="return jump(this);">もっと見る</a>
+              <a href="/skeb" onclick="return jump(this);">もっと見る</a>
             </div>
           </nav>
 
@@ -212,15 +212,15 @@
             <h2>Memorial</h2>
 
             <ul class="gallery">
-              <li><a href="#memorial/2024-11-10" onclick="return jump(this);"><img src="/images/memorial/2024-11-10.jpg" alt="狐ノ里たけのこ氷華リリースライブ"></a></li>
-              <li><a href="#memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_4.png" alt="Cinematic Neon Club (4)"></a></li>
-              <li><a href="#memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_3.png" alt="Cinematic Neon Club (3)"></a></li>
-              <li><a href="#memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_2.png" alt="Cinematic Neon Club (2)"></a></li>
-              <!--<li><a href="#memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_1.png" alt="Cinematic Neon Club (1)"></a></li>-->
+              <li><a href="/memorial/2024-11-10" onclick="return jump(this);"><img src="/images/memorial/2024-11-10.jpg" alt="狐ノ里たけのこ氷華リリースライブ"></a></li>
+              <li><a href="/memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_4.png" alt="Cinematic Neon Club (4)"></a></li>
+              <li><a href="/memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_3.png" alt="Cinematic Neon Club (3)"></a></li>
+              <li><a href="/memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_2.png" alt="Cinematic Neon Club (2)"></a></li>
+              <!--<li><a href="/memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_1.png" alt="Cinematic Neon Club (1)"></a></li>-->
             </ul>
 
             <div class="more">
-              <a href="#memorial" onclick="return jump(this);">もっと見る</a>
+              <a href="/memorial" onclick="return jump(this);">もっと見る</a>
             </div>
           </nav>
 
@@ -241,7 +241,7 @@
 
     <div class="target" id="top"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ トップページ</nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ トップページ</nav>
       <h2 class="header">最新情報</h2>
 
       <p>
@@ -252,7 +252,7 @@
         <img src="/images/news/c105-tousen.png" alt="C105当選！">
       </div>
 
-      <h3><a href="#games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク</a></h3>
+      <h3><a href="/games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク</a></h3>
 
       <p>
         水無川旅館ゲームの第3作！
@@ -263,7 +263,7 @@
         <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/XR-ERQm1Tik?si=Hgli-aTcn43VZsHh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
-      <h3><a href="#games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a></h3>
+      <h3><a href="/games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a></h3>
 
       <p>
         水無川旅館ゲームの第2作！
@@ -274,7 +274,7 @@
         <a rel="noopener sponsored" href="https://www.dlsite.com/home/dlaf/=/t/i/link/work/aid/mngw/id/RJ01128325.html" target="_blank"><img itemprop="image" src="//img.dlsite.jp/modpub/images2/work/doujin/RJ01129000/RJ01128325_img_main.jpg" alt="" border="0" class="target_type" /></a>
       </div>
 
-      <h3><a href="#games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a></h3>
+      <h3><a href="/games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a></h3>
 
       <p>
         水無川旅館ゲームの第1作！
@@ -288,7 +288,7 @@
 
     <div class="target" id="about"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#about" onclick="return jump(this);">About</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/about" onclick="return jump(this);">About</a></nav>
       <h2 class="header">About</h2>
 
       <p>
@@ -314,7 +314,7 @@
 
     <div class="target" id="lineup"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#about" onclick="return jump(this);">Lineup</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/about" onclick="return jump(this);">Lineup</a></nav>
       <h2 class="header">Lineup</h2>
 
       <p>
@@ -322,25 +322,25 @@
         随時更新（最終更新：<time datetime="2024-11-10T20:00+09:00">2024/11/10</time>）。
       </p>
 
-      <h3>【ゲーム】<a href="#games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク 体験版</a> ¥300</h3>
+      <h3>【ゲーム】<a href="/games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク 体験版</a> ¥300</h3>
 
       <div class="center">
         <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/XR-ERQm1Tik?si=Hgli-aTcn43VZsHh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
-      <h3>【音楽】<a href="#music/dont-let-me-remember" onclick="return jump(this);">ふりむいてなんていられない</a> ¥600</h3>
+      <h3>【音楽】<a href="/music/dont-let-me-remember" onclick="return jump(this);">ふりむいてなんていられない</a> ¥600</h3>
 
       <div class="center">
         <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/YjAPh33MMyE?si=VnF78GddRz9xKRP1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
-      <h3>【ゲーム】<a href="#games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a> ¥1,000</h3>
+      <h3>【ゲーム】<a href="/games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a> ¥1,000</h3>
 
       <div class="center">
         <a rel="noopener sponsored" href="https://www.dlsite.com/home/dlaf/=/t/i/link/work/aid/mngw/id/RJ01128325.html" target="_blank"><img itemprop="image" src="//img.dlsite.jp/modpub/images2/work/doujin/RJ01129000/RJ01128325_img_main.jpg" alt="" border="0" class="target_type" /></a>
       </div>
 
-      <h3>【ゲーム】<a href="#games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a> ¥1,000</h3>
+      <h3>【ゲーム】<a href="/games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a> ¥1,000</h3>
 
       <div class="center">
         <a rel="noopener sponsored" href="https://www.dlsite.com/home/dlaf/=/t/i/link/work/aid/mngw/id/RJ416420.html" target="_blank"><img itemprop="image" src="//img.dlsite.jp/modpub/images2/work/doujin/RJ417000/RJ416420_img_main.jpg" alt="" border="0" class="target_type" /></a>
@@ -355,21 +355,21 @@
 
     <div class="target" id="news"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#news" onclick="return jump(this);">News</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/news" onclick="return jump(this);">News</a></nav>
       <h2 class="header">News</h2>
 
       <ol class="news">
-        <li><time datetime="2024-11-11T04:00+09:00">2024/11/11</time> …… <a href="#memorial/2024-08-16" onclick="return jump(this);">ネネクラの写真</a>更新！</li>
-        <li><time datetime="2024-11-11T03:00+09:00">2024/11/11</time> …… <a href="#memorial/2024-11-10" onclick="return jump(this);">狐ノ里たけのこさんとツーショ</a>更新！</li>
-        <li><time datetime="2024-11-11T20:00+09:00">2024/11/11</time> …… <a href="#news/official-site" onclick="return jump(this);">水無川旅館公式サイト公開！</a></li>
-        <li><time datetime="2024-11-08T17:00+09:00">2024/11/8</time> …… <a href="#news/c105" onclick="return jump(this);">C105当選！</a></li>
-        <li><time datetime="2024-08-12T17:00+20:10">2024/8/12</time> …… <a href="#news/tenshinokokuhaku-experimental" onclick="return jump(this);">『Hijack テンシノコクハク 体験版』Booth公開！</a></li>
+        <li><time datetime="2024-11-11T04:00+09:00">2024/11/11</time> …… <a href="/memorial/2024-08-16" onclick="return jump(this);">ネネクラの写真</a>更新！</li>
+        <li><time datetime="2024-11-11T03:00+09:00">2024/11/11</time> …… <a href="/memorial/2024-11-10" onclick="return jump(this);">狐ノ里たけのこさんとツーショ</a>更新！</li>
+        <li><time datetime="2024-11-11T20:00+09:00">2024/11/11</time> …… <a href="/news/official-site" onclick="return jump(this);">水無川旅館公式サイト公開！</a></li>
+        <li><time datetime="2024-11-08T17:00+09:00">2024/11/8</time> …… <a href="/news/c105" onclick="return jump(this);">C105当選！</a></li>
+        <li><time datetime="2024-08-12T17:00+20:10">2024/8/12</time> …… <a href="/news/tenshinokokuhaku-experimental" onclick="return jump(this);">『Hijack テンシノコクハク 体験版』Booth公開！</a></li>
       </ol>
     </article>
 
     <div class="target" id="news/official-site"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#news" onclick="return jump(this);">News</a> ▷ <a href="#news/official-site" onclick="return jump(this);">水無川旅館公式サイト公開！</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/news" onclick="return jump(this);">News</a> ▷ <a href="/news/official-site" onclick="return jump(this);">水無川旅館公式サイト公開！</a></nav>
       <h2 class="header">水無川旅館公式サイト公開！</h2>
 
       <p>
@@ -381,7 +381,7 @@
 
     <div class="target" id="news/c105"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#news" onclick="return jump(this);">News</a> ▷ <a href="#news/c105" onclick="return jump(this);">C105当選！</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/news" onclick="return jump(this);">News</a> ▷ <a href="/news/c105" onclick="return jump(this);">C105当選！</a></nav>
       <h2 class="header">C105当選！</h2>
 
       <p>
@@ -395,7 +395,7 @@
 
     <div class="target" id="news/tenshinokokuhaku-experimental" data-target="true"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#news" onclick="return jump(this);">News</a> ▷ <a href="#news/tenshinokokuhaku-experimental" onclick="return jump(this);">『Hijack テンシノコクハク 体験版』Booth公開！</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/news" onclick="return jump(this);">News</a> ▷ <a href="/news/tenshinokokuhaku-experimental" onclick="return jump(this);">『Hijack テンシノコクハク 体験版』Booth公開！</a></nav>
       <h2 class="header">『Hijack テンシノコクハク 体験版』Booth公開！</h2>
 
       <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">『Hijack テンシノコクハク』体験版を Booth で公開しました！<br><br>Booth ページ ⇒ <a href="https://t.co/gal6qZIRCz">https://t.co/gal6qZIRCz</a> <a href="https://t.co/E7tObsQa8s">pic.twitter.com/E7tObsQa8s</a></p>&mdash; 川向薫/冬コミ【き-15a】 (@bydriv) <a href="https://twitter.com/bydriv/status/1822953826867138837?ref_src=twsrc%5Etfw">August 12, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -403,7 +403,7 @@
 
     <div class="target" id="schedule"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#schedule" onclick="return jump(this);">Schedule</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/schedule" onclick="return jump(this);">Schedule</a></nav>
       <h2 class="header">Schedule</h2>
 
       <h3>2024</h3>
@@ -437,10 +437,10 @@
 
     <div class="target" id="games"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#games" onclick="return jump(this);">Games</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/games" onclick="return jump(this);">Games</a></nav>
       <h2 class="header">Games</h2>
 
-      <h3><a href="#games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク</a></h3>
+      <h3><a href="/games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク</a></h3>
 
       <p>
         水無川旅館ゲームの第3作！
@@ -451,7 +451,7 @@
         <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/XR-ERQm1Tik?si=Hgli-aTcn43VZsHh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
-      <h3><a href="#games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a></h3>
+      <h3><a href="/games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a></h3>
 
       <p>
         水無川旅館ゲームの第2作！
@@ -462,7 +462,7 @@
         <a rel="noopener sponsored" href="https://www.dlsite.com/home/dlaf/=/t/i/link/work/aid/mngw/id/RJ01128325.html" target="_blank"><img itemprop="image" src="//img.dlsite.jp/modpub/images2/work/doujin/RJ01129000/RJ01128325_img_main.jpg" alt="" border="0" class="target_type" /></a>
       </div>
 
-      <h3><a href="#games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a></h3>
+      <h3><a href="/games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a></h3>
 
       <p>
         水無川旅館ゲームの第1作！
@@ -476,7 +476,7 @@
 
     <div class="target" id="games/tenshinokokuhaku"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#games" onclick="return jump(this);">Games</a> ▷ <a href="#games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/games" onclick="return jump(this);">Games</a> ▷ <a href="/games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク</a></nav>
       <h2 class="header">Hijack テンシノコクハク</h2>
 
       <p>
@@ -531,7 +531,7 @@
 
     <div class="target" id="games/hinjanohokori"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#games" onclick="return jump(this);">Games</a> ▷ <a href="#games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/games" onclick="return jump(this);">Games</a> ▷ <a href="/games/hinjanohokori" onclick="return jump(this);">Hijack ヒンジヤノホコリ</a></nav>
       <h2 class="header">Hijack ヒンジヤノホコリ</h2>
 
       <p>
@@ -546,7 +546,7 @@
 
     <div class="target" id="games/hitonomukuro"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#games" onclick="return jump(this);">Games</a> ▷ <a href="#games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/games" onclick="return jump(this);">Games</a> ▷ <a href="/games/hitonomukuro" onclick="return jump(this);">Hijack ヒトノムクロ</a></nav>
       <h2 class="header">Hijack ヒトノムクロ</h2>
 
       <p>
@@ -561,7 +561,7 @@
 
     <div class="target" id="music"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#music" onclick="return jump(this);">Music</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/music" onclick="return jump(this);">Music</a></nav>
       <h2 class="header">Music</h2>
       <h3>ふりむいてなんていられない</h3>
 
@@ -586,7 +586,7 @@
 
     <div class="target" id="music/dont-let-me-remember"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#music" onclick="return jump(this);">Music</a> ▷ <a href="#music/dont-let-me-remember" onclick="return jump(this);">ふりむいてなんていられない</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/music" onclick="return jump(this);">Music</a> ▷ <a href="/music/dont-let-me-remember" onclick="return jump(this);">ふりむいてなんていられない</a></nav>
       <h2 class="header">ふりむいてなんていられない</h2>
 
       <p>
@@ -600,7 +600,7 @@
 
     <div class="target" id="music/minagawa-teiri-ch"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#music" onclick="return jump(this);">Music</a> ▷ <a href="#music/minagawa-teiri-ch" onclick="return jump(this);">ミナガワ・テーリ Ch.</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/music" onclick="return jump(this);">Music</a> ▷ <a href="/music/minagawa-teiri-ch" onclick="return jump(this);">ミナガワ・テーリ Ch.</a></nav>
       <h2 class="header">ミナガワ・テーリ Ch.</h2>
 
       <p>
@@ -614,27 +614,27 @@
 
     <div class="target" id="skeb"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/skeb" onclick="return jump(this);">Skeb</a></nav>
       <h2 class="header">Skeb</h2>
 
       <ul class="gallery">
-        <li><a href="#skeb/2024-11-09" onclick="return jump(this);"><img src="/images/skeb/2024-11-09.png" alt="ポッキーテーリ（飯田はと様）"></a></li>
-        <li><a href="#skeb/2024-10-16" onclick="return jump(this);"><img src="/images/skeb/2024-10-16.png" alt="ヴァンパイアテーリ（飯田はと様）"></a></li>
-        <li><a href="#skeb/2024-10-12" onclick="return jump(this);"><img src="/images/skeb/2024-10-12.png" alt="テーリ（あじこま様）"></a></li>
-        <li><a href="#skeb/2024-09-06" onclick="return jump(this);"><img src="/images/skeb/2024-09-06.png" alt="お月見テーリ（飯田はと様）"></a></li>
-        <li><a href="#skeb/2024-08-18" onclick="return jump(this);"><img src="/images/skeb/2024-08-18.png" alt="テーリ×たけのこVRライブ！（飯田はと様）"></a></li>
-        <li><a href="#skeb/2024-08-06" onclick="return jump(this);"><img src="/images/skeb/2024-08-06.png" alt="水着テーリ（飯田はと様）"></a></li>
-        <li><a href="#skeb/2024-07-13" onclick="return jump(this);"><img src="/images/skeb/2024-07-13.png" alt="テーリ×たけのこ晴れ姿！（飯田はと様）"></a></li>
-        <li><a href="#skeb/2024-02-16" onclick="return jump(this);"><img src="/images/skeb/2024-02-16.png" alt="アイドルテーリ（あじこま様）"></a></li>
-        <li><a href="#skeb/2023-08-24" onclick="return jump(this);"><img src="/images/skeb/2023-08-24.png" alt="テーリ（飯田はと様）"></a></li>
-        <li><a href="#skeb/2023-06-23" onclick="return jump(this);"><img src="/images/skeb/2023-06-23.png" alt="テーリ（飯田はと様）"></a></li>
-        <li><a href="#skeb/2023-05-17" onclick="return jump(this);"><img src="/images/skeb/2023-05-17.png" alt="テーリ（あじこま様）"></a></li>
+        <li><a href="/skeb/2024-11-09" onclick="return jump(this);"><img src="/images/skeb/2024-11-09.png" alt="ポッキーテーリ（飯田はと様）"></a></li>
+        <li><a href="/skeb/2024-10-16" onclick="return jump(this);"><img src="/images/skeb/2024-10-16.png" alt="ヴァンパイアテーリ（飯田はと様）"></a></li>
+        <li><a href="/skeb/2024-10-12" onclick="return jump(this);"><img src="/images/skeb/2024-10-12.png" alt="テーリ（あじこま様）"></a></li>
+        <li><a href="/skeb/2024-09-06" onclick="return jump(this);"><img src="/images/skeb/2024-09-06.png" alt="お月見テーリ（飯田はと様）"></a></li>
+        <li><a href="/skeb/2024-08-18" onclick="return jump(this);"><img src="/images/skeb/2024-08-18.png" alt="テーリ×たけのこVRライブ！（飯田はと様）"></a></li>
+        <li><a href="/skeb/2024-08-06" onclick="return jump(this);"><img src="/images/skeb/2024-08-06.png" alt="水着テーリ（飯田はと様）"></a></li>
+        <li><a href="/skeb/2024-07-13" onclick="return jump(this);"><img src="/images/skeb/2024-07-13.png" alt="テーリ×たけのこ晴れ姿！（飯田はと様）"></a></li>
+        <li><a href="/skeb/2024-02-16" onclick="return jump(this);"><img src="/images/skeb/2024-02-16.png" alt="アイドルテーリ（あじこま様）"></a></li>
+        <li><a href="/skeb/2023-08-24" onclick="return jump(this);"><img src="/images/skeb/2023-08-24.png" alt="テーリ（飯田はと様）"></a></li>
+        <li><a href="/skeb/2023-06-23" onclick="return jump(this);"><img src="/images/skeb/2023-06-23.png" alt="テーリ（飯田はと様）"></a></li>
+        <li><a href="/skeb/2023-05-17" onclick="return jump(this);"><img src="/images/skeb/2023-05-17.png" alt="テーリ（あじこま様）"></a></li>
       </ul>
     </article>
 
     <div class="target" id="skeb/2024-11-09"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-11-09" onclick="return jump(this);">2024/11/9 飯田はと様</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="/skeb/2024-11-09" onclick="return jump(this);">2024/11/9 飯田はと様</a></nav>
       <h2 class="header">Skeb 2024/11/9 飯田はと様</h2>
 
       <p>
@@ -648,7 +648,7 @@
 
     <div class="target" id="skeb/2024-10-16"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-10-16" onclick="return jump(this);">2024/10/16 飯田はと様</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="/skeb/2024-10-16" onclick="return jump(this);">2024/10/16 飯田はと様</a></nav>
       <h2 class="header">Skeb 2024/10/16 飯田はと様</h2>
 
       <p>
@@ -662,7 +662,7 @@
 
     <div class="target" id="skeb/2024-10-12"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-10-12" onclick="return jump(this);">2024/10/12 あじこま様</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="/skeb/2024-10-12" onclick="return jump(this);">2024/10/12 あじこま様</a></nav>
       <h2 class="header">Skeb 2024/10/12 あじこま様</h2>
 
       <p>
@@ -676,7 +676,7 @@
 
     <div class="target" id="skeb/2024-09-06"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-09-06" onclick="return jump(this);">2024/9/06 飯田はと様</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="/skeb/2024-09-06" onclick="return jump(this);">2024/9/06 飯田はと様</a></nav>
       <h2 class="header">Skeb 2024/9/06 飯田はと様</h2>
 
       <p>
@@ -690,7 +690,7 @@
 
     <div class="target" id="skeb/2024-08-18"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-08-18" onclick="return jump(this);">2024/8/18 飯田はと様</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="/skeb/2024-08-18" onclick="return jump(this);">2024/8/18 飯田はと様</a></nav>
       <h2 class="header">Skeb 2024/8/18 飯田はと様</h2>
 
       <p>
@@ -704,7 +704,7 @@
 
     <div class="target" id="skeb/2024-08-06"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-08-06" onclick="return jump(this);">2024/8/6 飯田はと様</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="/skeb/2024-08-06" onclick="return jump(this);">2024/8/6 飯田はと様</a></nav>
       <h2 class="header">Skeb 2024/8/6 飯田はと様</h2>
 
       <p>
@@ -718,7 +718,7 @@
 
     <div class="target" id="skeb/2024-07-13"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-07-13" onclick="return jump(this);">2024/7/13 飯田はと様</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="/skeb/2024-07-13" onclick="return jump(this);">2024/7/13 飯田はと様</a></nav>
       <h2 class="header">Skeb 2024/7/13 飯田はと様</h2>
 
       <p>
@@ -732,7 +732,7 @@
 
     <div class="target" id="skeb/2024-02-16"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2024-02-16" onclick="return jump(this);">2024/2/16 あじこま様</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="/skeb/2024-02-16" onclick="return jump(this);">2024/2/16 あじこま様</a></nav>
       <h2 class="header">Skeb 2024/2/16 あじこま様</h2>
 
       <p>
@@ -746,7 +746,7 @@
 
     <div class="target" id="skeb/2023-08-24"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2023-08-24" onclick="return jump(this);">2023/8/24 飯田はと様</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="/skeb/2023-08-24" onclick="return jump(this);">2023/8/24 飯田はと様</a></nav>
       <h2 class="header">Skeb 2023/8/24 飯田はと様</h2>
 
       <p>
@@ -760,7 +760,7 @@
 
     <div class="target" id="skeb/2023-06-23"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2023-06-23" onclick="return jump(this);">2023/6/23 飯田はと様</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="/skeb/2023-06-23" onclick="return jump(this);">2023/6/23 飯田はと様</a></nav>
       <h2 class="header">Skeb 2023/6/23 飯田はと様</h2>
 
       <p>
@@ -774,7 +774,7 @@
 
     <div class="target" id="skeb/2023-05-17"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="#skeb/2023-05-17" onclick="return jump(this);">2023/5/17 あじこま様</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/skeb" onclick="return jump(this);">Skeb</a> ▷ <a href="/skeb/2023-05-17" onclick="return jump(this);">2023/5/17 あじこま様</a></nav>
       <h2 class="header">Skeb 2023/5/17 あじこま様</h2>
 
       <p>
@@ -788,21 +788,21 @@
 
     <div class="target" id="memorial"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#memorial" onclick="return jump(this);">Memorial</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/memorial" onclick="return jump(this);">Memorial</a></nav>
       <h2 class="header">Memorial</h2>
 
       <ul class="gallery">
-        <li><a href="#memorial/2024-11-10" onclick="return jump(this);"><img src="/images/memorial/2024-11-10.jpg" alt="狐ノ里たけのこ氷華リリースライブ"></a></li>
-        <li><a href="#memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_4.png" alt="Cinematic Neon Club (4)"></a></li>
-        <li><a href="#memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_3.png" alt="Cinematic Neon Club (3)"></a></li>
-        <li><a href="#memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_2.png" alt="Cinematic Neon Club (2)"></a></li>
-        <li><a href="#memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_1.png" alt="Cinematic Neon Club (1)"></a></li>
+        <li><a href="/memorial/2024-11-10" onclick="return jump(this);"><img src="/images/memorial/2024-11-10.jpg" alt="狐ノ里たけのこ氷華リリースライブ"></a></li>
+        <li><a href="/memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_4.png" alt="Cinematic Neon Club (4)"></a></li>
+        <li><a href="/memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_3.png" alt="Cinematic Neon Club (3)"></a></li>
+        <li><a href="/memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_2.png" alt="Cinematic Neon Club (2)"></a></li>
+        <li><a href="/memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_1.png" alt="Cinematic Neon Club (1)"></a></li>
       </ul>
     </article>
 
     <div class="target" id="memorial/2024-11-10"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#memorial" onclick="return jump(this);">Memorial</a> ▷ <a href="#memorial/2024-11-10" onclick="return jump(this);">2024/11/10 狐ノ里たけのこ氷華リリースライブ</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/memorial" onclick="return jump(this);">Memorial</a> ▷ <a href="/memorial/2024-11-10" onclick="return jump(this);">2024/11/10 狐ノ里たけのこ氷華リリースライブ</a></nav>
       <h2 class="header">2024/11/10 狐ノ里たけのこ氷華リリースライブ</h2>
 
       <p>2024/11/10に<a href="https://x.com/takenoko_vr" target="_blank" rel="noreferrer noopener">狐ノ里たけのこ</a>さんが新曲『<a href="https://takenoko10.booth.pm/items/6267864" target="_blank" rel="noreferrer noopener">氷華</a>』のリリースライブを開催されました（<a href="https://www.youtube.com/live/FWfw86ug92Y" target="_blank" rel="noreferrer noopener">アーカイブ</a>）。その時のツーショです！</p>
@@ -813,7 +813,7 @@
 
     <div class="target" id="memorial/2024-08-16"></div>
     <article class="main">
-      <nav class="tree"><a href="#top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="#memorial" onclick="return jump(this);">Memorial</a> ▷ <a href="#memorial/2024-08-16" onclick="return jump(this);">2024/8/16 Cinematic Neon Club</a></nav>
+      <nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/memorial" onclick="return jump(this);">Memorial</a> ▷ <a href="/memorial/2024-08-16" onclick="return jump(this);">2024/8/16 Cinematic Neon Club</a></nav>
       <h2 class="header">2024/8/16 Cinematic Neon Club</h2>
 
       <p>2024/8/16にVRChatで開催された音楽ライブ<a href="https://x.com/cnclub_vr" target="_blank" rel="noreferrer noopener">Cinematic Neon Club（ネネクラ）</a>に行ってきました。その時の写真です。</p>
