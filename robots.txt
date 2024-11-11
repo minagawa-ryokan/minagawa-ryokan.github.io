@@ -1,13 +1,2 @@
 User-agent: *
 Sitemap: https://minagawa-ryokan.github.io/sitemap.xml
-Disallow: /about/
-Disallow: /fonts/
-Disallow: /games/
-Disallow: /images/
-Disallow: /lineup/
-Disallow: /memorial/
-Disallow: /music/
-Disallow: /news/
-Disallow: /schedule/
-Disallow: /skeb/
-Disallow: /top/

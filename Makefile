@@ -34,4 +34,5 @@ all: $(addsuffix /index.html,$(ALL))
 
 $(addsuffix /index.html,$(ALL)): index.html
 	mkdir -p $(dir $@)
-	perl -pe 's/(id="$(subst /,\/,$(patsubst %/index.html,%,$@))")/\1 data-target="true"/g' $< > $@
+	perl -pe 's/<!-- META -->/<meta name="robots" content="noindex">/g' $< | \
+	perl -pe 's/(id="$(subst /,\/,$(patsubst %/index.html,%,$@))")/\1 data-target="true"/g' > $@
