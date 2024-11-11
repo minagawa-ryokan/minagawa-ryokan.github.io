@@ -13,9 +13,10 @@ ALL := \
   music \
   music/dont-let-me-remember \
   music/minagawa-teiri-ch \
-  memorial \
-  memorial/2024-11-10 \
-  memorial/2024-08-16 \
+  gallery \
+  gallery/2024-06-09 \
+  gallery/2024-06-08 \
+  gallery/2024-06-07 \
   skeb \
   skeb/2024-11-09 \
   skeb/2024-10-16 \
@@ -27,7 +28,10 @@ ALL := \
   skeb/2024-02-16 \
   skeb/2023-08-24 \
   skeb/2023-06-23 \
-  skeb/2023-05-17
+  skeb/2023-05-17 \
+  memorial \
+  memorial/2024-11-10 \
+  memorial/2024-08-16
 
 .PHONY: all
 all: $(addsuffix /index.html,$(ALL))
