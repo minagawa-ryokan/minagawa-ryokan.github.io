@@ -71,14 +71,13 @@ div.background {
     z-index: -100;
 }
 
-div.background:not(:has(~ div.world article.container div.target:target:not([data-target]) + article.main)):not(:has(~ div.world article.container div.target[data-target="true"] + article.main)) {
+div.background:not(:has(~ div.world article.container div.target[data-target="true"] + article.main)) {
     background-position: center;
     opacity: 1;
 
     transition: background-position 0.2s 0.3s, opacity 0.2s 0.3s;
 }
 
-div.background:has(~ div.world article.container div.target:target:not([data-target]) + article.main),
 div.background:has(~ div.world article.container div.target[data-target="true"] + article.main) {
     background-position: center;
     opacity: 0.5;
@@ -120,14 +119,13 @@ article.container {
 }
 
 @media (orientation: landscape) and (min-width: 1024px) {
-    article.container:not(:has(div.target:target:not([data-target]) + article.main)):not(:has(div.target[data-target="true"] + article.main)) {
+    article.container:not(:has(div.target[data-target="true"] + article.main)) {
         grid-template-rows: auto;
         grid-template-columns: 100% 0%;
 
         transition: grid-template-columns 0.2s 0.3s;
     }
 
-    article.container:has(div.target:target:not([data-target]) + article.main),
     article.container:has(div.target[data-target="true"] + article.main) {
         grid-template-rows: auto;
         grid-template-columns: 512px 1fr;
@@ -137,16 +135,14 @@ article.container {
 }
 
 @media (orientation: portrait) or (max-width: 1024px) {
-    article.container:has(div.target#top:target:not([data-target]) + article.main),
     article.container:has(div.target#top[data-target="true"] + article.main),
-    article.container:not(:has(div.target:target:not([data-target]) + article.main)):not(:has(div.target[data-target="true"] + article.main)) {
+    article.container:not(:has(div.target[data-target="true"] + article.main)) {
         grid-template-rows: auto;
         grid-template-columns: 100% 0%;
 
         transition: grid-template-columns 0s 0.3s;
     }
 
-    article.container:has(div.target:not(#top):target:not([data-target]) + article.main),
     article.container:has(div.target:not(#top)[data-target="true"] + article.main) {
         grid-template-rows: auto;
         grid-template-columns: 0% 100%;
@@ -180,8 +176,7 @@ article.top div.entrance p {
   }
 }
 
-article.top:not(:has(~ div.target:target:not([data-target]) + article.main)):not(:has(~ div.target[data-target="true"] + article.main)) div.entrance,
-article.top:has(~ div.target:target:not([data-target]) + article.main) div.summary,
+article.top:not(:has(~ div.target[data-target="true"] + article.main)) div.entrance,
 article.top:has(~ div.target[data-target="true"] + article.main) div.summary {
     height: auto;
     opacity: 100%;
@@ -189,9 +184,8 @@ article.top:has(~ div.target[data-target="true"] + article.main) div.summary {
     transition: height 0s 0.1s, opacity 0.1s 0.1s;
 }
 
-article.top:has(~ div.target:target:not([data-target]) + article.main) div.entrance,
 article.top:has(~ div.target[data-target="true"] + article.main) div.entrance,
-article.top:not(:has(~ div.target:target:not([data-target]) + article.main)):not(:has(~ div.target[data-target="true"] + article.main)) div.summary {
+article.top:not(:has(~ div.target[data-target="true"] + article.main)) div.summary {
     height: 0;
     opacity: 0%;
     pointer-events: none;
@@ -200,7 +194,6 @@ article.top:not(:has(~ div.target:target:not([data-target]) + article.main)):not
 }
 
 @media (orientation: portrait) or (max-width: 1024px) {
-    article.top:has(~ div.target:not(#top):target:not([data-target]) + article.main),
     article.top:has(~ div.target:not(#top)[data-target="true"] + article.main) {
         height: 0;
         opacity: 0%;
@@ -209,9 +202,8 @@ article.top:not(:has(~ div.target:target:not([data-target]) + article.main)):not
         transition: height 0s 0.2s, opacity 0.2s;
     }
 
-    article.top:has(~ div.target#top:target:not([data-target]) + article.main),
     article.top:has(~ div.target[data-target="true"]#top + article.main),
-    article.top:not(:has(~ div.target:target:not([data-target]) + article.main)):not(:has(~ div.target[data-target="true"] + article.main)) {
+    article.top:not(:has(~ div.target[data-target="true"] + article.main)) {
         height: auto;
         opacity: 100%;
 
@@ -237,7 +229,6 @@ article.main {
 }
 
 @media (orientation: landscape) and (min-width: 1024px) {
-    div.target:target:not([data-target]) + article.main,
     div.target[data-target="true"] + article.main {
         height: auto;
         opacity: 100%;
@@ -245,7 +236,7 @@ article.main {
         transition: height 0s 0.2s, opacity 0.3s 0.2s;
     }
 
-    div.target:not(:target):not([data-target="true"]) + article.main {
+    div.target:not([data-target="true"]) + article.main {
         height: 0;
         opacity: 0%;
         pointer-events: none;
@@ -255,7 +246,6 @@ article.main {
 }
 
 @media (orientation: portrait) or (max-width: 1024px) {
-    div.target:not(#top):target:not([data-target]) + article.main,
     div.target:not(#top)[data-target="true"] + article.main {
         height: auto;
         opacity: 100%;
@@ -263,9 +253,8 @@ article.main {
         transition: height 0s 0.2s, opacity 0.3s 0.2s;
     }
 
-    div.target#top:target:not([data-target]) + article.main,
     div.target#top[data-target="true"] + article.main,
-    div.target:not(:target):not([data-target="true"]) + article.main {
+    div.target:not([data-target="true"]) + article.main {
         height: 0;
         opacity: 0%;
         pointer-events: none;
