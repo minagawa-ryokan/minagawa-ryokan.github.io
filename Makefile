@@ -3,6 +3,7 @@ ALL := \
   about \
   lineup \
   news \
+  news/tokyo-game-dungeon-7 \
   news/c105 \
   news/tenshinokokuhaku-experimental \
   schedule \
