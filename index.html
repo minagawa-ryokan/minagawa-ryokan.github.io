@@ -48,7 +48,17 @@
         }
 
         function jump(path) {
-            history.pushState({path: path}, "", "/" + path);
+            fetch(path === "" ? "/meta.json" : "/" + path + "/meta.json").then((meta) => meta.json()).then((meta) => {
+                if (meta.title !== undefined) {
+                    history.pushState({path: path, title: meta.title}, "", "/" + path);
+                    document.title = meta.title;
+                } else {
+                    fetch("/meta.json").then((meta) => meta.json()).then((meta) => {
+                        history.pushState({path: path, title: meta.title}, "", "/" + path);
+                        document.title = meta.title;
+                    });
+                }
+            });
 
             if (beforeState != null && beforeState.path != null) {
                 var dom = get(beforeState.path);
@@ -84,6 +94,10 @@
                 if (dom != null) {
                     dom.dataset.target = "true";
                 }
+            }
+
+            if (e.state != null && e.state.title != null) {
+                document.title = e.state.title;
             }
 
             beforeState = e.state;
@@ -198,9 +212,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2>Games</h2>
 
         <ul class="gallery">
-          <li><a href="/games/tenshinokokuhaku" onclick="return jump(this);"><a src="/images/games/tenshinokokuhaku/thumbnail.png" alt="Hijack テンシノコクハク"></a></li>
-          <li><a href="/games/hinjanohokori" onclick="return jump(this);"><a src="/images/games/hinjanohokori/main.png" alt="Hijack ヒンジヤノホコリ"></a></li>
-          <li><a href="/games/hitonomukuro" onclick="return jump(this);"><a src="/images/games/hitonomukuro/jacket.png" alt="Hijack ヒトノムクロ"></a></li>
+          <li><a href="/games/tenshinokokuhaku" onclick="return jump(this);"><img src="/images/games/tenshinokokuhaku/thumbnail.png" alt="Hijack テンシノコクハク"></a></li>
+          <li><a href="/games/hinjanohokori" onclick="return jump(this);"><img src="/images/games/hinjanohokori/main.png" alt="Hijack ヒンジヤノホコリ"></a></li>
+          <li><a href="/games/hitonomukuro" onclick="return jump(this);"><img src="/images/games/hitonomukuro/jacket.png" alt="Hijack ヒトノムクロ"></a></li>
         </ul>
 
         <div class="more">
@@ -212,8 +226,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2>Music</h2>
 
         <ul class="gallery">
-          <li><a href="/music/dont-let-me-remember" onclick="return jump(this);"><a src="/images/music/dont-let-me-remember.png" alt="ふりむいてなんていられない"></a></li>
-          <li><a href="/music/minagawa-teiri-ch" onclick="return jump(this);"><a src="/images/music/minagawa-teiri-ch.png" alt="ミナガワ・テーリ Ch."></a></li>
+          <li><a href="/music/dont-let-me-remember" onclick="return jump(this);"><img src="/images/music/dont-let-me-remember.png" alt="ふりむいてなんていられない"></a></li>
+          <li><a href="/music/minagawa-teiri-ch" onclick="return jump(this);"><img src="/images/music/minagawa-teiri-ch.png" alt="ミナガワ・テーリ Ch."></a></li>
         </ul>
 
         <div class="more">

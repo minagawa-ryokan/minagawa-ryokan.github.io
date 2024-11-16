@@ -70,7 +70,17 @@
         }
 
         function jump(path) {
-            history.pushState({path: path}, "", "/" + path);
+            fetch(path === "" ? "/meta.json" : "/" + path + "/meta.json").then((meta) => meta.json()).then((meta) => {
+                if (meta.title !== undefined) {
+                    history.pushState({path: path, title: meta.title}, "", "/" + path);
+                    document.title = meta.title;
+                } else {
+                    fetch("/meta.json").then((meta) => meta.json()).then((meta) => {
+                        history.pushState({path: path, title: meta.title}, "", "/" + path);
+                        document.title = meta.title;
+                    });
+                }
+            });
 
             if (beforeState != null && beforeState.path != null) {
                 var dom = get(beforeState.path);
@@ -106,6 +116,10 @@
                 if (dom != null) {
                     dom.dataset.target = "true";
                 }
+            }
+
+            if (e.state != null && e.state.title != null) {
+                document.title = e.state.title;
             }
 
             beforeState = e.state;
