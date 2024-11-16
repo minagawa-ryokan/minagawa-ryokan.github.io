@@ -6,6 +6,7 @@ all: $(addsuffix /index.html,$(ALL))
 $(addsuffix /index.html,$(ALL)): index.html.erb
 	mkdir -p $(dir $@)
 
+	MNGW_ROOT=./ \
 	MNGW_DIR=$(dir $@) \
 		erb -T - $< | \
 		perl -pe 's/(id="$(subst /,\/,$(patsubst %/index.html,%,$@))")/\1 data-target="true"/g' \

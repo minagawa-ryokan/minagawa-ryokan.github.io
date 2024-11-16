@@ -1,3 +1,22 @@
+<%-                                                                          -%>
+<%- require "json"                                                           -%>
+<%-                                                                          -%>
+<%- if File.exists?("#{ENV["MNGW_ROOT"]}meta.json")                          -%>
+<%-   META_DEFAULT = JSON.parse(File.read("#{ENV["MNGW_ROOT"]}meta.json"))   -%>
+<%- else                                                                     -%>
+<%-   META_DEFAULT = {}                                                      -%>
+<%- end                                                                      -%>
+<%-                                                                          -%>
+<%- if File.exists?("#{ENV["MNGW_DIR"]}meta.json")                           -%>
+<%-   META_OVERRIDE = JSON.parse(File.read("#{ENV["MNGW_DIR"]}meta.json"))   -%>
+<%- else                                                                     -%>
+<%-   META_OVERRIDE = {}                                                     -%>
+<%- end                                                                      -%>
+<%-                                                                          -%>
+<%- def meta(name)                                                           -%>
+<%-   META_OVERRIDE.key?(name) ? META_OVERRIDE[name] : META_DEFAULT[name]    -%>
+<%- end                                                                      -%>
+<%-                                                                          -%>
 <!DOCTYPE html>
 
 <head>
@@ -13,16 +32,16 @@
   <%- end -%>
   <meta name="robots" content="nofollow">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://minagawa-ryokan.github.io">
-  <meta name="twitter:title" content="水無川旅館">
-  <meta name="twitter:description" content="同人アクションゲームサークル・水無川旅館の公式サイトです。">
-  <meta name="twitter:image" content="https://minagawa-ryokan.github.io/images/meta/twitter-card.png">
-  <meta name="twitter:site" content="@bydriv">
+  <meta name="twitter:card" content="<%= meta('twitter_card_type') %>">
+  <meta name="twitter:url" content="<%= meta('twitter_card_url') %>">
+  <meta name="twitter:title" content="<%= meta('title') %>">
+  <meta name="twitter:description" content="<%= meta('twitter_card_description') %>">
+  <meta name="twitter:image" content="<%= meta('twitter_card_image') %>">
+  <meta name="twitter:site" content="<%= meta('twitter_card_site') %>">
 
   <link rel="stylesheet" href="/index.css">
 
-  <title>水無川旅館</title>
+  <title><%= meta("title") %></title>
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
