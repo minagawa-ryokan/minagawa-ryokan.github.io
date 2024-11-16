@@ -1,9 +1,11 @@
 ALL := \
+  . \
   top \
   about \
   lineup \
   news \
   news/tokyo-game-dungeon-7 \
+  news/official-site \
   news/c105 \
   news/tenshinokokuhaku-experimental \
   schedule \
@@ -37,7 +39,10 @@ ALL := \
 .PHONY: all
 all: $(addsuffix /index.html,$(ALL))
 
-$(addsuffix /index.html,$(ALL)): index.html
+$(addsuffix /index.html,$(ALL)): index.html.erb
 	mkdir -p $(dir $@)
-	perl -pe 's/<!-- META -->/<meta name="robots" content="noindex">/g' $< | \
-	perl -pe 's/(id="$(subst /,\/,$(patsubst %/index.html,%,$@))")/\1 data-target="true"/g' > $@
+
+	MNGW_DIR=$(dir $@) \
+		erb -T - $< | \
+		perl -pe 's/(id="$(subst /,\/,$(patsubst %/index.html,%,$@))")/\1 data-target="true"/g' \
+		> $@

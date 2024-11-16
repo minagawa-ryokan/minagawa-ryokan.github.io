@@ -71,14 +71,14 @@ div.background {
     z-index: -100;
 }
 
-div.background:not(:has(~ div.world article.container div.target[data-target="true"] + article.main)) {
+div.background:not(:has(~ div.world div.container div.target[data-target="true"] + article.main)) {
     background-position: center;
     opacity: 1;
 
     transition: background-position 0.2s 0.3s, opacity 0.2s 0.3s;
 }
 
-div.background:has(~ div.world article.container div.target[data-target="true"] + article.main) {
+div.background:has(~ div.world div.container div.target[data-target="true"] + article.main) {
     background-position: center;
     opacity: 0.5;
 
@@ -114,19 +114,19 @@ div.world {
     scrollbar-gutter: stable both-edges;
 }
 
-article.container {
+div.container {
     display: grid;
 }
 
 @media (orientation: landscape) and (min-width: 1024px) {
-    article.container:not(:has(div.target[data-target="true"] + article.main)) {
+    div.container:not(:has(div.target[data-target="true"] + article.main)) {
         grid-template-rows: auto;
         grid-template-columns: 100% 0%;
 
         transition: grid-template-columns 0.2s 0.3s;
     }
 
-    article.container:has(div.target[data-target="true"] + article.main) {
+    div.container:has(div.target[data-target="true"] + article.main) {
         grid-template-rows: auto;
         grid-template-columns: 512px 1fr;
 
@@ -135,15 +135,15 @@ article.container {
 }
 
 @media (orientation: portrait) or (max-width: 1024px) {
-    article.container:has(div.target#top[data-target="true"] + article.main),
-    article.container:not(:has(div.target[data-target="true"] + article.main)) {
+    div.container:has(div.target#top[data-target="true"] + article.main),
+    div.container:not(:has(div.target[data-target="true"] + article.main)) {
         grid-template-rows: auto;
         grid-template-columns: 100% 0%;
 
         transition: grid-template-columns 0s 0.3s;
     }
 
-    article.container:has(div.target:not(#top)[data-target="true"] + article.main) {
+    div.container:has(div.target:not(#top)[data-target="true"] + article.main) {
         grid-template-rows: auto;
         grid-template-columns: 0% 100%;
 
