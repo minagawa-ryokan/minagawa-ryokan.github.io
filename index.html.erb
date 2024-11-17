@@ -58,6 +58,7 @@
 
   <script>
     var jump = (function () {
+        var WORLD = null;
         var beforeState = null;
 
         function get(id) {
@@ -92,6 +93,15 @@
                     dom.dataset.target = "true";
                 }
             }
+
+            if (WORLD === null) {
+                WORLD = document.getElementById("world");
+            }
+
+            WORLD.scroll({
+                top: 0,
+                behavior: "smooth",
+            });
 
             beforeState = {path: path};
         }
@@ -173,7 +183,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="background"></div>
 
-<div class="world">
+<div class="world" id="world">
   <div class="container">
     <%=- File.read("#{ENV["MNGW_DIR"]}article.html") -%>
   </div>
