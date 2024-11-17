@@ -57,16 +57,18 @@ if ENV["MNGW_DIR"] == ENV["MNGW_ROOT"] then
   <div class="root">
     <h1 class="header"><a href="/" onclick="return jump(this);"><img src="/images/minagawa-ryokan-logo.png" alt="水無川旅館"></a></h1>
 
-    <div class="entrance">
-      <nav>
-        <p class="navigation">
-          <a href="/top" onclick="return jump(this);">CLICK HERE TO ENTER</a>
-        </p>
-      </nav>
-    </div>
+    <div class="content">
+      <div class="entrance">
+        <nav>
+          <p class="navigation">
+            <a href="/top" onclick="return jump(this);">CLICK HERE TO ENTER</a>
+          </p>
+        </nav>
+      </div>
 
-    <div class="summary">
-    #{html}
+      <div class="summary">
+        #{html}
+      </div>
     </div>
 
     <p class="copyright">
