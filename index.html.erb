@@ -158,7 +158,8 @@
 
                 fetch("/article.html").then((response) => response.text()).then((htmlText) => {
                     var container = document.querySelector("div.container");
-                    container.insertAdjacentHTML("afterbegin", htmlText);
+                    var fragment = document.createRange().createContextualFragment(htmlText);
+                    container.prepend(fragment);
                 });
             }
         })();
@@ -173,7 +174,8 @@
             if (href !== "/" && document.getElementById(href.slice(1)) === null) {
                 fetch(href + "/article.html").then((response) => response.text()).then((htmlText) => {
                     var container = document.querySelector("div.container");
-                    container.insertAdjacentHTML("beforeend", htmlText);
+                    var fragment = document.createRange().createContextualFragment(htmlText);
+                    container.append(fragment);
                 }).then(() => {
                     jump(href.slice(1));
                 });
