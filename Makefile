@@ -7,7 +7,7 @@ all: $(addsuffix /index.html,$(ALL))
 	mkdir -p $(dir $@)
 	MNGW_DIR=$(dir $@) ruby article.rb < $< > $@
 
-index.html: article.html index.html.erb
+index.html: article.html meta.json index.html.erb
 	mkdir -p $(dir $@)
 
 	MNGW_ROOT=./ \
@@ -16,7 +16,7 @@ index.html: article.html index.html.erb
 		perl -pe 's/(id="$(subst /,\/,$(patsubst %/index.html,%,$@))")/\1 data-target="true"/g' \
 		> $@
 
-%/index.html: %/article.html index.html.erb
+%/index.html: %/article.html %/meta.json index.html.erb
 	mkdir -p $(dir $@)
 
 	MNGW_ROOT=./ \
