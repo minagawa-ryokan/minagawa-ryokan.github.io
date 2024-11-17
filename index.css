@@ -414,7 +414,7 @@ ol.notification li {
     border-bottom: 1px dashed #AFAAA5;
 }
 
-ol.notification li.new {
+ol.notification li:has(span.new) {
     border-bottom: 1px dashed #EFEEED;
 
     color: #EFEEED;
