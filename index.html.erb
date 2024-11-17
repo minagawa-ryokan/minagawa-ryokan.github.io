@@ -66,13 +66,21 @@
         }
 
         function jump(path) {
+            if (WORLD === null) {
+                WORLD = document.getElementById("world");
+            }
+
+            var scrollTop = WORLD.scrollTop;
+
             fetch(path === "" ? "/meta.json" : "/" + path + "/meta.json").then((meta) => meta.json()).then((meta) => {
                 if (meta.title !== undefined) {
-                    history.pushState({path: path, title: meta.title}, "", "/" + path);
+                    history.replaceState({...history.state, scrollTop: scrollTop}, "");
+                    history.pushState({path: path, title: meta.title, scrollTop: 0}, "", "/" + path);
                     document.title = meta.title;
                 } else {
                     fetch("/meta.json").then((meta) => meta.json()).then((meta) => {
-                        history.pushState({path: path, title: meta.title}, "", "/" + path);
+                        history.replaceState({...history.state, scrollTop: scrollTop}, "");
+                        history.pushState({path: path, title: meta.title, scrollTop: 0}, "", "/" + path);
                         document.title = meta.title;
                     });
                 }
@@ -92,10 +100,6 @@
                 if (dom != null) {
                     dom.dataset.target = "true";
                 }
-            }
-
-            if (WORLD === null) {
-                WORLD = document.getElementById("world");
             }
 
             WORLD.scroll({
@@ -125,6 +129,13 @@
 
             if (e.state != null && e.state.title != null) {
                 document.title = e.state.title;
+            }
+
+            if (e.state != null && e.state.scrollTop != null) {
+                WORLD.scroll({
+                    top: e.state.scrollTop,
+                    behavior: "smooth",
+                });
             }
 
             beforeState = e.state;
