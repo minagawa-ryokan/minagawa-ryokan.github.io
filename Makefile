@@ -3,7 +3,7 @@ ALL := $(patsubst %/article.html,%,$(shell find -name 'article.html'))
 .PHONY: all
 all: $(addsuffix /index.html,$(ALL))
 
-%/article.html: %/article.md article.rb
+%/article.html: %/article.md %/meta.json article.rb
 	mkdir -p $(dir $@)
 	MNGW_DIR=$(dir $@) ruby article.rb < $< > $@
 
