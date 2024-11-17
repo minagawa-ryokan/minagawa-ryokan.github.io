@@ -1,10 +1,15 @@
-<div class="target" id="games/tenshinokokuhaku"></div>
-<article class="main">
-<nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/games" onclick="return jump(this);">Games</a> ▷ <a href="/games/tenshinokokuhaku" onclick="return jump(this);">Hijack テンシノコクハク</a></nav><h2 class="header">Hijack テンシノコクハク</h2><p>水無川旅館ゲームの第3作！　<a href="https://bydriv.booth.pm/items/6000093" target="_blank" rel="noreferrer noopener">Booth</a>にて体験版公開中！<p>
+[水無川旅館](/top) ▷ [Games](/games) ▷ [Hijack テンシノコクハク](/games/tenshinokokuhaku)
+
+## Hijack テンシノコクハク
+
+水無川旅館ゲームの第3作！　[Booth](https://bydriv.booth.pm/items/6000093)にて体験版公開中！
+
 <div class="center">
   <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/XR-ERQm1Tik?si=Hgli-aTcn43VZsHh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
-<h3>登場人物紹介</h3>
+
+### 登場人物紹介
+
 <div class="two-column-l">
   <div class="left">
     <img class="full" src="/images/games/tenshinokokuhaku/teiri.png" alt="ミナガワ・テーリ">
@@ -42,5 +47,3 @@
   </div>
 </div>
 -->
-
-</article>
