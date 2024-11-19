@@ -53,13 +53,13 @@
 
             var scrollTop = WORLD.scrollTop;
 
-            fetch(path === "" ? "/meta.json" : "/" + path + "/meta.json").then((meta) => meta.json()).then((meta) => {
+            fetch(path === "" ? "/meta.json" : "/" + path + "/meta.json", { cache: "no-cache" }).then((meta) => meta.json()).then((meta) => {
                 if (meta.title !== undefined) {
                     history.replaceState({...history.state, scrollTop: scrollTop}, "");
                     history.pushState({path: path, title: meta.title, scrollTop: 0}, "", "/" + path);
                     document.title = meta.title;
                 } else {
-                    fetch("/meta.json").then((meta) => meta.json()).then((meta) => {
+                    fetch("/meta.json", { cache: "no-cache" }).then((meta) => meta.json()).then((meta) => {
                         history.replaceState({...history.state, scrollTop: scrollTop}, "");
                         history.pushState({path: path, title: meta.title, scrollTop: 0}, "", "/" + path);
                         document.title = meta.title;
@@ -137,7 +137,7 @@
                 history.replaceState({path: path}, "", "/" + path);
                 beforeState = {path: path};
 
-                fetch("/article.html").then((response) => response.text()).then((htmlText) => {
+                fetch("/article.html", { cache: "no-cache" }).then((response) => response.text()).then((htmlText) => {
                     var container = document.querySelector("div.container");
                     var fragment = document.createRange().createContextualFragment(htmlText);
                     container.prepend(fragment);
@@ -153,7 +153,7 @@
             }
 
             if (href !== "/" && document.getElementById(href.slice(1)) === null) {
-                fetch(href + "/article.html").then((response) => response.text()).then((htmlText) => {
+                fetch(href + "/article.html", { cache: "no-cache" }).then((response) => response.text()).then((htmlText) => {
                     var container = document.querySelector("div.container");
                     var fragment = document.createRange().createContextualFragment(htmlText);
                     container.append(fragment);
@@ -181,7 +181,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="target" id="memorial" data-target="true"></div>
 <article class="main">
-<nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/memorial" onclick="return jump(this);">Memorial</a></nav><h2 class="header">Memorial</h2><ul class="gallery"><li><a href="/memorial/2024-11-10" onclick="return jump(this);"><img src="/images/memorial/2024-11-10.jpg" alt="狐ノ里たけのこ氷華リリースライブ"></a></li>
+<nav class="tree"><a href="/top" onclick="return jump(this);">水無川旅館</a> ▷ <a href="/memorial" onclick="return jump(this);">Memorial</a></nav><h2 class="header">Memorial</h2><ul class="gallery"><li><a href="/memorial/2024-11-19" onclick="return jump(this);"><img src="/images/memorial/2024-11-19_1.png" alt="会員制BARまよね～ず (1)"></a></li>
+<li><a href="/memorial/2024-11-19" onclick="return jump(this);"><img src="/images/memorial/2024-11-19_2.png" alt="会員制BARまよね～ず (2)"></a></li>
+<li><a href="/memorial/2024-11-19" onclick="return jump(this);"><img src="/images/memorial/2024-11-19_3.png" alt="会員制BARまよね～ず (3)"></a></li>
+<li><a href="/memorial/2024-11-19" onclick="return jump(this);"><img src="/images/memorial/2024-11-19_4.png" alt="会員制BARまよね～ず (4)"></a></li>
+<li><a href="/memorial/2024-11-10" onclick="return jump(this);"><img src="/images/memorial/2024-11-10.jpg" alt="狐ノ里たけのこ氷華リリースライブ"></a></li>
 <li><a href="/memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_4.png" alt="Cinematic Neon Club (4)"></a></li>
 <li><a href="/memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_3.png" alt="Cinematic Neon Club (3)"></a></li>
 <li><a href="/memorial/2024-08-16" onclick="return jump(this);"><img src="/images/memorial/2024-08-16_2.png" alt="Cinematic Neon Club (2)"></a></li>

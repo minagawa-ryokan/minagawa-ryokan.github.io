@@ -1,7 +1,9 @@
-ALL := $(patsubst %/article.html,%,$(shell find -name 'article.html'))
+ALL := $(patsubst %/article.md,%,$(shell find -name 'article.md'))
 
 .PHONY: all
-all: $(addsuffix /index.html,$(ALL)) $(addsuffix /README.md,$(ALL))
+all:	$(addsuffix /article.html,$(ALL)) \
+	$(addsuffix /index.html,$(ALL)) \
+	$(addsuffix /README.md,$(ALL))
 
 article.html: article.md meta.json article.html.rb
 	mkdir -p $(dir $@)

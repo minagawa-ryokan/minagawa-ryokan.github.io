@@ -72,13 +72,13 @@
 
             var scrollTop = WORLD.scrollTop;
 
-            fetch(path === "" ? "/meta.json" : "/" + path + "/meta.json").then((meta) => meta.json()).then((meta) => {
+            fetch(path === "" ? "/meta.json" : "/" + path + "/meta.json", { cache: "no-cache" }).then((meta) => meta.json()).then((meta) => {
                 if (meta.title !== undefined) {
                     history.replaceState({...history.state, scrollTop: scrollTop}, "");
                     history.pushState({path: path, title: meta.title, scrollTop: 0}, "", "/" + path);
                     document.title = meta.title;
                 } else {
-                    fetch("/meta.json").then((meta) => meta.json()).then((meta) => {
+                    fetch("/meta.json", { cache: "no-cache" }).then((meta) => meta.json()).then((meta) => {
                         history.replaceState({...history.state, scrollTop: scrollTop}, "");
                         history.pushState({path: path, title: meta.title, scrollTop: 0}, "", "/" + path);
                         document.title = meta.title;
@@ -156,7 +156,7 @@
                 history.replaceState({path: path}, "", "/" + path);
                 beforeState = {path: path};
 
-                fetch("/article.html").then((response) => response.text()).then((htmlText) => {
+                fetch("/article.html", { cache: "no-cache" }).then((response) => response.text()).then((htmlText) => {
                     var container = document.querySelector("div.container");
                     var fragment = document.createRange().createContextualFragment(htmlText);
                     container.prepend(fragment);
@@ -172,7 +172,7 @@
             }
 
             if (href !== "/" && document.getElementById(href.slice(1)) === null) {
-                fetch(href + "/article.html").then((response) => response.text()).then((htmlText) => {
+                fetch(href + "/article.html", { cache: "no-cache" }).then((response) => response.text()).then((htmlText) => {
                     var container = document.querySelector("div.container");
                     var fragment = document.createRange().createContextualFragment(htmlText);
                     container.append(fragment);
