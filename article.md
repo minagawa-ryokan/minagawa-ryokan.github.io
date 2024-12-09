@@ -84,14 +84,6 @@
   <a href="/memorial" onclick="return jump(this);">もっと見る</a>
 </div>
 
-## 詰将棋
-
-- [![詰将棋 (2024/12/10)](/images/shogi/2024-12-10.png)](/shogi/2024-12-10)
-
-<div class="more">
-  <a href="/shogi" onclick="return jump(this);">もっと見る</a>
-</div>
-
 ## etc.
 
 <nav>
