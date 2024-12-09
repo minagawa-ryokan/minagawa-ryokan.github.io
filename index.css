@@ -511,6 +511,24 @@ article.main ul.gallery img {
 }
 
 /*******************************************************************************
+ * <details />
+ ******************************************************************************/
+details {
+    font-size: 16px;
+    color: #AFAAA5;
+}
+
+/* h3 level */
+details summary {
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    font-weight: bold;
+    font-size: 16px;
+    color: #CFCCC9;
+}
+
+/*******************************************************************************
  * <div class="center" />
  ******************************************************************************/
 @media (orientation: landscape) and (min-width: 1024px) {
